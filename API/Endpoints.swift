@@ -17,6 +17,7 @@ class Endpoints {
     let popular = "/movie/popular"
     let topRated = "/movie/top_rated"
     let upcoming = "/movie/upcoming"
+    
 
 //MARK: - URL Creators
     
@@ -44,6 +45,12 @@ class Endpoints {
         return url
     }
     
+    func urlSimilar(toMovie: String) -> URL? {
+        let string = baseUrl + "/movie/\(toMovie)/similar" + "?api_key=" + apiKey
+        let url =  URL(string: string)
+        return url
+    }
 }
+
 
 

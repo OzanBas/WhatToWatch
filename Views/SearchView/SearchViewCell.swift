@@ -7,29 +7,55 @@
 
 import UIKit
 
+
+protocol FeatureButtonsProtocol {
+    func userDidRequestWatchList(atRow: Int)
+    func userDidRequestDetails(atRow: Int)
+    func userDidRequestSimilar(atRow: Int)
+}
+
+
 class SearchViewCell: UITableViewCell {
 
+    var delegate : FeatureButtonsProtocol?
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var releaseLabel: UILabel!
-    @IBOutlet weak var watchlistButton: UIButton!
-    @IBOutlet weak var detailButton: UIButton!
     @IBOutlet weak var coverImage: UIImageView!
     
-    
+    @IBOutlet weak var watchListButton: CustomUIButton!
+    @IBOutlet weak var detailsButton: CustomUIButton!
+    @IBOutlet weak var similarMoviesButton: CustomUIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         coverImage.layer.cornerRadius = 10
         
-        watchlistButton.layer.cornerRadius = 5
-        detailButton.layer.cornerRadius = 5
+        buttonConfiguration(button: watchListButton)
+        buttonConfiguration(button: detailsButton)
+        buttonConfiguration(button: similarMoviesButton)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func buttonConfiguration(button: UIButton) {
+        button.layer.cornerRadius = 10
+    }
+    
+    
+    @IBAction func watchlistButtonTapped(_ sender: CustomUIButton) {
+        delegate?.userDidRequestWatchList(atRow: sender.row!)
+    }
+    @IBAction func detailButtonTapped(_ sender: CustomUIButton) {
+        delegate?.userDidRequestDetails(atRow: sender.row!)
+    }
+    @IBAction func similarMoviesTapped(_ sender: CustomUIButton) {
+        delegate?.userDidRequestSimilar(atRow: sender.row!)
     }
     
 }

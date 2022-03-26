@@ -139,7 +139,6 @@ extension MainTabBarController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainMovieFeedTableViewCell", for: indexPath) as! MainMovieFeedTableViewCell
         
         cell.feedTitleLabel.font = .boldSystemFont(ofSize: view.frame.width / 13)
-        
         cell.navigationDelegate = self
         cell.feedTitleLabel.text = titlesToBeFetched[indexPath.row]
         let cellTitle = cell.feedTitleLabel.text

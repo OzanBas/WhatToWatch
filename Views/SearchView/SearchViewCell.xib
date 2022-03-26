@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -53,36 +54,67 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="b7Q-Al-jKc">
-                                <rect key="frame" x="20" y="141.5" width="196" height="38.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="b7Q-Al-jKc">
+                                <rect key="frame" x="20" y="141.5" width="196" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-tm-Odq">
-                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="31"/>
-                                        <color key="backgroundColor" red="0.37254901959999998" green="0.80000000000000004" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-tm-Odq" customClass="CustomUIButton" customModule="WhatToWatch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Say-L9-2sW"/>
+                                        </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="capsule"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background" imageContentMode="center">
+                                                <imageReference key="image" image="play.tv" catalog="system" symbolScale="default"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="watchlistButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OcW-NM-FfV"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idh-iS-oLF">
-                                        <rect key="frame" x="105.5" y="0.0" width="90.5" height="31"/>
-                                        <color key="backgroundColor" red="0.37254901959999998" green="0.80000000000000004" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idh-iS-oLF" customClass="CustomUIButton" customModule="WhatToWatch" customModuleProvider="target">
+                                        <rect key="frame" x="70.5" y="0.0" width="55" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="xId-r6-JE0"/>
+                                        </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="capsule"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background" image="info.circle" catalog="system" imageContentMode="center"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="detailButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ltr-q1-bKQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJG-sG-gxo" customClass="CustomUIButton" customModule="WhatToWatch" customModuleProvider="target">
+                                        <rect key="frame" x="140.5" y="0.0" width="55.5" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="gVV-YY-Mbi"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background" image="circle.hexagongrid.fill" catalog="system" imageContentMode="center"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="similarMoviesTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XG7-oc-euh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="r6W-tm-Odq" secondAttribute="bottom" constant="20" id="2bb-wg-raS"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="b7Q-Al-jKc" firstAttribute="top" secondItem="CQs-T0-ZIf" secondAttribute="bottom" constant="20" id="77h-fJ-pxR"/>
                             <constraint firstAttribute="trailing" secondItem="oeE-nr-QLs" secondAttribute="trailing" constant="20" id="H7V-tO-df0"/>
-                            <constraint firstAttribute="bottom" secondItem="b7Q-Al-jKc" secondAttribute="bottom" constant="20" id="QpI-V1-iv0"/>
                             <constraint firstItem="IKd-AX-lw9" firstAttribute="top" secondItem="GmM-8I-72h" secondAttribute="top" constant="20" id="WtU-0K-w3u"/>
                             <constraint firstAttribute="trailing" secondItem="IKd-AX-lw9" secondAttribute="trailing" constant="20" id="Xrc-Eo-aul"/>
+                            <constraint firstItem="b7Q-Al-jKc" firstAttribute="top" secondItem="CQs-T0-ZIf" secondAttribute="bottom" constant="20" id="YOr-iu-TI3"/>
                             <constraint firstItem="CQs-T0-ZIf" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="20" id="bPU-kM-jtc"/>
                             <constraint firstItem="oeE-nr-QLs" firstAttribute="top" secondItem="IKd-AX-lw9" secondAttribute="bottom" constant="20" id="mif-1g-OQ4"/>
                             <constraint firstItem="oeE-nr-QLs" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="20" id="nbz-wK-gMx"/>
@@ -107,18 +139,25 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="coverImage" destination="nui-Gh-BhE" id="6bE-I4-c3n"/>
-                <outlet property="detailButton" destination="Idh-iS-oLF" id="YRQ-Dp-CJP"/>
+                <outlet property="detailsButton" destination="Idh-iS-oLF" id="S3y-pb-WF6"/>
                 <outlet property="releaseLabel" destination="CQs-T0-ZIf" id="ZjL-xd-2x5"/>
                 <outlet property="scoreLabel" destination="oeE-nr-QLs" id="SGi-VJ-yuG"/>
+                <outlet property="similarMoviesButton" destination="kJG-sG-gxo" id="L9i-5V-pMX"/>
                 <outlet property="titleLabel" destination="IKd-AX-lw9" id="FTB-8n-ulg"/>
-                <outlet property="watchlistButton" destination="r6W-tm-Odq" id="E8r-Tn-afa"/>
+                <outlet property="watchListButton" destination="r6W-tm-Odq" id="EpB-dj-G41"/>
             </connections>
             <point key="canvasLocation" x="-215.21739130434784" y="136.60714285714286"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="circle.hexagongrid.fill" catalog="system" width="128" height="112"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="play.tv" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
