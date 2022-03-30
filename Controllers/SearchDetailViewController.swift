@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ButtonsViewController: UIViewController {
+class SearchDetailViewController: UIViewController {
     
     //MARK: - PROPERTIES
     var movieData : Movies?
@@ -105,7 +105,7 @@ class ButtonsViewController: UIViewController {
 }
 
 //MARK: - TABLEVIEW EXTENSION
-extension ButtonsViewController: UITableViewDelegate, UITableViewDataSource {
+extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if buildType == .buildForDetail {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell") as! DetailTableViewCell

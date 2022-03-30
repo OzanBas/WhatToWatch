@@ -16,7 +16,8 @@ class DiscoverViewController: UIViewController {
     @IBOutlet weak var discoverTableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
     var movie : [Movies] = []
-
+    var watchlistDelegate : WatchlistProtocol?
+    var watchlistVC = MyWatchlistController()
     
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
@@ -101,7 +102,7 @@ extension DiscoverViewController: UITextFieldDelegate {
     
 //    CONSTANT SEARCH
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        if let text =  searchTextField.text {
+        if let text = searchTextField.text {
             let correctedText = text.replacingOccurrences(of: " ", with: "+")
             let url = Endpoints().movieSearch(query: correctedText)
             searchMovie(url: url)
@@ -125,13 +126,14 @@ extension DiscoverViewController: UITextFieldDelegate {
 //MARK: - FEATURE BUTTONS EXTENSION
 extension DiscoverViewController: FeatureButtonsProtocol {
     func userDidRequestWatchList(atRow: Int) {
-        
+        let selectedMovie = movie[atRow]
+        watchlistVC.handleWatchlist(movie: selectedMovie)
     }
     
     func userDidRequestDetails(atRow: Int) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextViewController = storyboard.instantiateViewController(withIdentifier: "ButtonsVC") as! ButtonsViewController
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "SearchDetailVC") as! SearchDetailViewController
         
         nextViewController.movieData = movie[atRow]
         nextViewController.buildType = .buildForDetail
@@ -144,10 +146,11 @@ extension DiscoverViewController: FeatureButtonsProtocol {
         
         searchSimilarMovies(atRow: atRow) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let nextViewController = storyboard.instantiateViewController(withIdentifier: "ButtonsVC") as! ButtonsViewController
+            let nextViewController = storyboard.instantiateViewController(withIdentifier: "SearchDetailVC") as! SearchDetailViewController
             nextViewController.similarMovies = self.movie
             nextViewController.buildType = .buildForSimilar
             self.navigationController?.pushViewController(nextViewController, animated: true)
         }
     }
+    
 }

@@ -13,7 +13,7 @@ struct MovieModel: Codable {
     let results: [Movies]
 }
 
-struct Movies: Codable {
+struct Movies: Codable, Equatable, Hashable {
     let adult: Bool?
     let backdrop_path: String?
     let id: Int?

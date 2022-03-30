@@ -29,9 +29,11 @@
 		3F63D3CB27D794BC003F301F /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63D3CA27D794BC003F301F /* MovieDetailViewController.swift */; };
 		3F63D3CE27D7962F003F301F /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63D3CC27D7962F003F301F /* DetailTableViewCell.swift */; };
 		3F63D3CF27D7962F003F301F /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F63D3CD27D7962F003F301F /* DetailTableViewCell.xib */; };
+		3F6B5F3C27F444B8005EE7E7 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B5F3B27F444B8005EE7E7 /* ArrayExtension.swift */; };
 		3F9C353027E9C6B2001C0110 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C352F27E9C6B2001C0110 /* UILabelExtension.swift */; };
-		3F9C353227EDCD58001C0110 /* ButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C353127EDCD57001C0110 /* ButtonsViewController.swift */; };
+		3F9C353227EDCD58001C0110 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C353127EDCD57001C0110 /* SearchDetailViewController.swift */; };
 		3F9C353427EEF2DA001C0110 /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C353327EEF2DA001C0110 /* CustomUIButton.swift */; };
+		3F9C353627F2FD72001C0110 /* MyWatchlistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9C353527F2FD72001C0110 /* MyWatchlistController.swift */; };
 		3F9D8CC727E877B6005C498B /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D8CC627E877B6005C498B /* DiscoverViewController.swift */; };
 		3F9D8CCB27E8AC97005C498B /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D8CC927E8AC97005C498B /* SearchViewCell.swift */; };
 		3F9D8CCC27E8AC97005C498B /* SearchViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9D8CCA27E8AC97005C498B /* SearchViewCell.xib */; };
@@ -61,9 +63,11 @@
 		3F63D3CA27D794BC003F301F /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		3F63D3CC27D7962F003F301F /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		3F63D3CD27D7962F003F301F /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
+		3F6B5F3B27F444B8005EE7E7 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		3F9C352F27E9C6B2001C0110 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
-		3F9C353127EDCD57001C0110 /* ButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsViewController.swift; sourceTree = "<group>"; };
+		3F9C353127EDCD57001C0110 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		3F9C353327EEF2DA001C0110 /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
+		3F9C353527F2FD72001C0110 /* MyWatchlistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWatchlistController.swift; sourceTree = "<group>"; };
 		3F9D8CC627E877B6005C498B /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		3F9D8CC927E8AC97005C498B /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		3F9D8CCA27E8AC97005C498B /* SearchViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewCell.xib; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 				3F63D3C327D74DA5003F301F /* Controllers */,
 				3F63D3C227D74D99003F301F /* Extensions */,
 				3F9C352F27E9C6B2001C0110 /* UILabelExtension.swift */,
+				3F6B5F3B27F444B8005EE7E7 /* ArrayExtension.swift */,
 				3F9C353327EEF2DA001C0110 /* CustomUIButton.swift */,
 				3F63D3B327D74C58003F301F /* ImageViewExtension.swift */,
 				3F63D3B427D74C58003F301F /* UrlSessionExtension.swift */,
@@ -133,7 +138,8 @@
 				3F63D3BD27D74C9B003F301F /* MainTabBarController.swift */,
 				3F63D3CA27D794BC003F301F /* MovieDetailViewController.swift */,
 				3F9D8CC627E877B6005C498B /* DiscoverViewController.swift */,
-				3F9C353127EDCD57001C0110 /* ButtonsViewController.swift */,
+				3F9C353127EDCD57001C0110 /* SearchDetailViewController.swift */,
+				3F9C353527F2FD72001C0110 /* MyWatchlistController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -299,12 +305,14 @@
 				3F63D3BE27D74C9B003F301F /* MainTabBarController.swift in Sources */,
 				3F63D3A927D74BF5003F301F /* DataService.swift in Sources */,
 				3F63D3AA27D74BF5003F301F /* Endpoints.swift in Sources */,
-				3F9C353227EDCD58001C0110 /* ButtonsViewController.swift in Sources */,
+				3F9C353227EDCD58001C0110 /* SearchDetailViewController.swift in Sources */,
 				3F63D3B527D74C58003F301F /* ImageViewExtension.swift in Sources */,
 				3F63D3B227D74C44003F301F /* MainMovieFeedTableViewCell.swift in Sources */,
 				3F63D3B627D74C58003F301F /* UrlSessionExtension.swift in Sources */,
+				3F9C353627F2FD72001C0110 /* MyWatchlistController.swift in Sources */,
 				3F9C353027E9C6B2001C0110 /* UILabelExtension.swift in Sources */,
 				3F63D3CB27D794BC003F301F /* MovieDetailViewController.swift in Sources */,
+				3F6B5F3C27F444B8005EE7E7 /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

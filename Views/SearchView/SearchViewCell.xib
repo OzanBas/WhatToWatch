@@ -67,7 +67,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="" cornerStyle="capsule">
                                             <backgroundConfiguration key="background" imageContentMode="center">
-                                                <imageReference key="image" image="play.tv" catalog="system" symbolScale="default"/>
+                                                <imageReference key="image" image="star.fill" catalog="system" symbolScale="default"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
                                         <connections>
@@ -152,7 +152,7 @@
     <resources>
         <image name="circle.hexagongrid.fill" catalog="system" width="128" height="112"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <image name="play.tv" catalog="system" width="128" height="97"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
