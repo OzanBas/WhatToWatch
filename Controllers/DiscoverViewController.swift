@@ -16,8 +16,10 @@ class DiscoverViewController: UIViewController {
     @IBOutlet weak var discoverTableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
     var movie : [Movies] = []
+    var similarMovies : [Movies] = []
     var watchlistDelegate : WatchlistProtocol?
     var watchlistVC = MyWatchlistController()
+    var DM = DataManagement()
     
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
@@ -54,13 +56,23 @@ class DiscoverViewController: UIViewController {
         }
     }
     
-    func searchSimilarMovies(atRow: Int, completion: @escaping () -> Void) {
-        if let title = movie[atRow].title {
-            let correctedTitle = title.replacingOccurrences(of: " ", with: "+")
-            let url = Endpoints().urlSimilar(toMovie: correctedTitle)
-            searchMovie(url: url)
+    func similarApiCall(atRow: Int, showVC: SearchDetailViewController, completion: @escaping () -> Void ) {
+        if let id = movie[atRow].id {
+            let url = Endpoints().urlSimilar(toMovie: String(id))
+            URLSession.shared.request(url: url, expecting: MovieModel.self) { result in
+                switch result {
+                case .success(let model):
+                    DispatchQueue.main.async {
+                        self.similarMovies = model.results
+                        print(self.similarMovies.count)
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+                }
+                completion()
+            }
         }
-        completion()
     }
     
 }
@@ -68,12 +80,12 @@ class DiscoverViewController: UIViewController {
 //MARK: - TABLEVIEW EXTENSION
 extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(movie.count)
         return movie.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchViewCell") as! SearchViewCell
+//      SearchViewCell delegate
         cell.delegate = self
         
         cell.detailsButton.row = indexPath.row
@@ -111,24 +123,15 @@ extension DiscoverViewController: UITextFieldDelegate {
     
 }
 
-        
-//    SINGLE SEARCH
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//
-//        if let text =  searchTextField.text {
-//            let correctedText = text.replacingOccurrences(of: " ", with: "+")
-//            let url = Endpoints().movieSearch(query: correctedText)
-//            searchMovie(url: url)
-//        }
-//    }
-//}
 
-//MARK: - FEATURE BUTTONS EXTENSION
+//MARK: - FEATURE BUTTONS PROTOCOL
 extension DiscoverViewController: FeatureButtonsProtocol {
     func userDidRequestWatchList(atRow: Int) {
         let selectedMovie = movie[atRow]
-        watchlistVC.handleWatchlist(movie: selectedMovie)
+        DM.handleFavorites(movie: selectedMovie)
+        
     }
+    
     
     func userDidRequestDetails(atRow: Int) {
         
@@ -144,13 +147,17 @@ extension DiscoverViewController: FeatureButtonsProtocol {
     
     func userDidRequestSimilar(atRow: Int) {
         
-        searchSimilarMovies(atRow: atRow) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let nextViewController = storyboard.instantiateViewController(withIdentifier: "SearchDetailVC") as! SearchDetailViewController
-            nextViewController.similarMovies = self.movie
-            nextViewController.buildType = .buildForSimilar
-            self.navigationController?.pushViewController(nextViewController, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "SearchDetailVC") as! SearchDetailViewController
+        similarApiCall(atRow: atRow, showVC: nextViewController) {
+            DispatchQueue.main.async {
+                nextViewController.similarMovies = self.similarMovies
+                nextViewController.buildType = .buildForSimilar
+                self.navigationController?.pushViewController(nextViewController, animated: true)
+
+            }
         }
+
     }
     
 }

@@ -11,13 +11,10 @@ import Kingfisher
 class MainTabBarController: UIViewController , NavigationProtocol{
 
     
-    
-    
 //MARK: - PROPERTIES
 
     let apiParams = Endpoints()
     let titlesToBeFetched : [String] = ["Upcoming", "Popular", "TopRated"]
-    
     
     @IBOutlet weak var mainMovieTableView: UITableView!
     
@@ -47,7 +44,6 @@ class MainTabBarController: UIViewController , NavigationProtocol{
 //MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-
         mainMovieTableView.rowHeight = view.frame.height / 2.4
         
         mainMovieTableView.delegate = self
@@ -154,5 +150,4 @@ extension MainTabBarController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
-    
 }

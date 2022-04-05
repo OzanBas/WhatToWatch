@@ -8,11 +8,7 @@
 import UIKit
 
 
-protocol FeatureButtonsProtocol {
-    func userDidRequestWatchList(atRow: Int)
-    func userDidRequestDetails(atRow: Int)
-    func userDidRequestSimilar(atRow: Int)
-}
+
 
 
 class SearchViewCell: UITableViewCell {

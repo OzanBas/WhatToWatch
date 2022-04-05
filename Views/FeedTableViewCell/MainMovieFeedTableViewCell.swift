@@ -8,10 +8,6 @@
 import UIKit
 
 
-protocol NavigationProtocol {
-    func moveToDetailVC(movie: Movies)
-}
-
 
 class MainMovieFeedTableViewCell: UITableViewCell {
 

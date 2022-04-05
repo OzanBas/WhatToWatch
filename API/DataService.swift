@@ -6,7 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 //MARK: - Request
 
 //Request's are done with URLSession extension .request method.
+
+public class DataService {
+
+    
+}

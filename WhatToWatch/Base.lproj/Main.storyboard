@@ -163,7 +163,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="7W6-v2-BVF" kind="relationship" relationship="viewControllers" id="sb3-cl-T0r"/>
-                        <segue destination="9PC-a7-l1W" kind="relationship" relationship="viewControllers" id="W1x-uh-9sq"/>
+                        <segue destination="8fP-z9-lrV" kind="relationship" relationship="viewControllers" id="W1x-uh-9sq"/>
                         <segue destination="e1M-lj-gYz" kind="relationship" relationship="viewControllers" id="zQv-TJ-Lq4"/>
                     </connections>
                 </tabBarController>
@@ -171,7 +171,7 @@
             </objects>
             <point key="canvasLocation" x="-696" y="563"/>
         </scene>
-        <!--MyWatchlist-->
+        <!--My Watchlist Controller-->
         <scene sceneID="cav-V7-iRx">
             <objects>
                 <viewController id="9PC-a7-l1W" customClass="MyWatchlistController" customModule="WhatToWatch" customModuleProvider="target" sceneMemberID="viewController">
@@ -180,7 +180,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZVS-E3-NvU">
-                                <rect key="frame" x="0.0" y="84" width="414" height="729"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="685"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="szf-B9-IBm">
@@ -203,14 +203,14 @@
                             <constraint firstItem="ZVS-E3-NvU" firstAttribute="leading" secondItem="Nh7-eh-yyH" secondAttribute="leading" id="z3C-LQ-2cr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="MyWatchlist" image="star.fill" catalog="system" id="ftD-n9-dtq"/>
+                    <navigationItem key="navigationItem" id="Nyg-u2-ZM6"/>
                     <connections>
                         <outlet property="watchlistTableView" destination="ZVS-E3-NvU" id="hfS-AS-CAF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fg2-Ls-ViF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="432" y="1297"/>
+            <point key="canvasLocation" x="1342.0289855072465" y="1296.4285714285713"/>
         </scene>
         <!--Home-->
         <scene sceneID="KgF-7A-lSa">
@@ -302,6 +302,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLH-cb-6ny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="431.8840579710145" y="562.5"/>
+        </scene>
+        <!--MyWatchlist-->
+        <scene sceneID="Mtd-nL-tn4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8fP-z9-lrV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="MyWatchlist" image="star.fill" catalog="system" id="ftD-n9-dtq"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tcr-WK-fW9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9PC-a7-l1W" kind="relationship" relationship="rootViewController" id="JxT-2s-owZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sxg-2I-BGl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="431.8840579710145" y="1296.4285714285713"/>
         </scene>
     </scenes>
     <resources>

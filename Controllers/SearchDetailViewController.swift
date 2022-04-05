@@ -24,19 +24,17 @@ class SearchDetailViewController: UIViewController {
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("SearchDetailVC \(similarMovies.count)")
+        
+        tableView.delegate = self
+        tableView.dataSource = self
        
         if buildType == .buildForDetail {
             configureDetailTableView()
         } else {
             configureSimilarTableView()
         }
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        print("lifecycle: \(movieData?.title ?? "no data")")
-        
-
+        tableView.reloadData()
     }
     
     
