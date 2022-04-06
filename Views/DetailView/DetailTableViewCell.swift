@@ -11,6 +11,8 @@ class DetailTableViewCell: UITableViewCell {
 
     //MARK: - Properties
     
+    var delegate: DetailScreenButtonProtocol?
+    
     @IBOutlet weak var detailBGView: UIView!
     @IBOutlet weak var detailCoverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -21,6 +23,7 @@ class DetailTableViewCell: UITableViewCell {
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var overviewValue: UILabel!
     @IBOutlet weak var voteCountLabel: UILabel!
+    @IBOutlet weak var watchlistButton: UIButton!
     
     
     override func awakeFromNib() {
@@ -33,13 +36,8 @@ class DetailTableViewCell: UITableViewCell {
 
     }
     
-
-//    func configureUI() {
-//        let imageWidth = contentView.frame.width * 0.45
-//        let imageHeight = contentView.frame.height * 0.3
-//        detailCoverImageView.widthAnchor.constraint(equalToConstant: imageWidth).isActive = true
-//        detailCoverImageView.heightAnchor.constraint(equalToConstant: imageHeight).isActive = true
-//        
-//        detailCoverImageView.layer.cornerRadius = 5
-//    }
+    @IBAction func watchlistButtonTapped(_ sender: UIButton) {
+        delegate?.userDidRequestWatchList()
+    }
+    
 }

@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,8 +68,25 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJe-pN-7sh">
+                                        <rect key="frame" x="301" y="145" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.37254901959999998" green="0.80000000000000004" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="BPs-n2-zzx"/>
+                                            <constraint firstAttribute="height" constant="40" id="l19-bm-HK7"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.1058823466" green="0.26274511220000002" blue="0.2823529541" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="star.fill" catalog="system" symbolScale="default"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="watchlistButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kjF-GP-WPG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="ZJe-pN-7sh" firstAttribute="leading" secondItem="gEE-A6-XZF" secondAttribute="trailing" constant="10" id="11y-ia-i80"/>
                                     <constraint firstItem="YY1-uk-KDa" firstAttribute="top" secondItem="l7I-Ha-1IL" secondAttribute="bottom" constant="5" id="4f0-1f-yQj"/>
                                     <constraint firstItem="xG0-7p-wKD" firstAttribute="leading" secondItem="Pm7-56-1Mp" secondAttribute="leading" constant="8" id="6ar-Gb-uwJ"/>
                                     <constraint firstItem="JvZ-GC-u17" firstAttribute="top" secondItem="Pm7-56-1Mp" secondAttribute="top" constant="15" id="AyY-Nj-A87"/>
@@ -88,6 +106,7 @@
                                     <constraint firstItem="YY1-uk-KDa" firstAttribute="leading" secondItem="gEE-A6-XZF" secondAttribute="trailing" constant="5" id="hF1-3j-FMx"/>
                                     <constraint firstAttribute="trailing" secondItem="l7I-Ha-1IL" secondAttribute="trailing" constant="5" id="hsK-Jl-2h4"/>
                                     <constraint firstItem="zji-EU-JTJ" firstAttribute="leading" secondItem="Pm7-56-1Mp" secondAttribute="leading" constant="8" id="kPS-7n-een"/>
+                                    <constraint firstItem="ZJe-pN-7sh" firstAttribute="top" secondItem="TaU-S6-GmL" secondAttribute="bottom" constant="10" id="ps9-De-YQf"/>
                                     <constraint firstAttribute="trailing" secondItem="xG0-7p-wKD" secondAttribute="trailing" constant="8" id="qGQ-Ni-dqr"/>
                                     <constraint firstItem="l7I-Ha-1IL" firstAttribute="leading" secondItem="gEE-A6-XZF" secondAttribute="trailing" constant="5" id="sWZ-kL-KVT"/>
                                     <constraint firstItem="GsX-HS-pAD" firstAttribute="top" secondItem="JvZ-GC-u17" secondAttribute="bottom" constant="5" id="sdZ-oE-AW3"/>
@@ -122,8 +141,12 @@
                 <outlet property="releaseDateLabel" destination="l7I-Ha-1IL" id="QRW-kc-8u2"/>
                 <outlet property="voteCountLabel" destination="TaU-S6-GmL" id="532-iD-OiC"/>
                 <outlet property="voteScoreLabel" destination="YY1-uk-KDa" id="1Tu-lb-GDg"/>
+                <outlet property="watchlistButton" destination="ZJe-pN-7sh" id="9Rc-6u-EGP"/>
             </connections>
             <point key="canvasLocation" x="63.04347826086957" y="193.52678571428569"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+    </resources>
 </document>

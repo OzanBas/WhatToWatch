@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import SwiftUI
 
 class MainTabBarController: UIViewController , NavigationProtocol{
 
@@ -151,3 +152,4 @@ extension MainTabBarController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 }
+

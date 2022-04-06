@@ -14,6 +14,7 @@ class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var detailTableView: UITableView!
     var movieData : Movies?
+    var DM = DataManagement()
     
     
     //MARK: - LIFECYCLE
@@ -44,7 +45,10 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as! DetailTableViewCell
+        cell.delegate = self
+        
         if let posterPath = movieData?.poster_path {
             cell.detailCoverImageView.setCoverImage(posterPath: posterPath)
         }
@@ -59,5 +63,15 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
         cell.languageLabel.displayStringOptional(string: movieData?.original_language, headline: "Language: ")
         cell.overviewValue.text = movieData?.overview
         return cell
+    }
+}
+
+
+extension MovieDetailViewController: DetailScreenButtonProtocol {
+    func userDidRequestWatchList() {
+        if let movie = movieData {
+            DM.handleFavorites(movie: movie)
+        }
+        
     }
 }

@@ -14,6 +14,7 @@ class SearchDetailViewController: UIViewController {
     
     var similarMovies : [Movies] = []
     
+    let DM = DataManagement()
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -105,12 +106,15 @@ class SearchDetailViewController: UIViewController {
 //MARK: - TABLEVIEW EXTENSION
 extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if buildType == .buildForDetail {
+        if buildType == .buildForDetail { // cell building single detail screen
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell") as! DetailTableViewCell
+            cell.delegate = self
             detailCellConfig(cell: cell)
             return cell
-        } else {
+        } else { // cell building for similar api search
             let cell = tableView.dequeueReusableCell(withIdentifier: "SearchViewCell") as! SearchViewCell
+            cell.delegate = self
+            cell.watchListButton.row = indexPath.row
             similarCellConfig(cell: cell, indexPath: indexPath)
             return cell
         }
@@ -120,4 +124,35 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
         returnRows(build: buildType!)
 }
 
+}
+
+extension SearchDetailViewController: FeatureButtonsProtocol {
+    func userDidRequestWatchList(atRow: Int) {
+        if buildType == .buildForSimilar {
+            let selectedMovie = similarMovies[atRow]
+            DM.handleFavorites(movie: selectedMovie)
+        } else {
+            if let selectedMovie = movieData {
+                DM.handleFavorites(movie: selectedMovie)
+            }
+        }
+    }
+    
+    func userDidRequestDetails(atRow: Int) {
+//        non-functional
+    }
+    
+    func userDidRequestSimilar(atRow: Int) {
+//        non-functional
+    }
+}
+
+extension SearchDetailViewController: DetailScreenButtonProtocol {
+    func userDidRequestWatchList() {
+        if let movie = movieData {
+            DM.handleFavorites(movie: movie)
+        }
+    }
+    
+    
 }

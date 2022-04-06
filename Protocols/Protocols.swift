@@ -27,3 +27,8 @@ protocol FeatureButtonsProtocol {
 protocol WatchlistProtocol {
     func handleWatchlist(movie: Movies)
 }
+
+//MARK: - MASTER: DetailTableViewCell, DELEGATE:
+protocol DetailScreenButtonProtocol {
+    func userDidRequestWatchList()
+}
