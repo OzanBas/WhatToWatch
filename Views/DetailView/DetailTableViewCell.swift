@@ -28,7 +28,8 @@ class DetailTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        configureUI()
+        let size = watchlistButton.frame.height
+        watchlistButton.layer.cornerRadius = size / 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,9 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sIo-Pu-VaW">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usQ-Cj-G8D">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WhatToWatch?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3w8-RT-Nga">
+                                        <rect key="frame" x="20" y="61" width="374" height="27"/>
+                                        <color key="backgroundColor" name="Background beauty"/>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
+                                        <color key="textColor" name="TextDark beauty"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="Background beauty"/>
+                                <color key="tintColor" name="Chocolate beauty"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3w8-RT-Nga" secondAttribute="bottom" id="Pxh-wX-mbA"/>
+                                    <constraint firstItem="3w8-RT-Nga" firstAttribute="leading" secondItem="usQ-Cj-G8D" secondAttribute="leading" constant="20" id="alU-V2-IcY"/>
+                                    <constraint firstAttribute="trailing" secondItem="3w8-RT-Nga" secondAttribute="trailing" constant="20" id="rjS-1h-SVZ"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sIo-Pu-VaW">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Background beauty"/>
+                                <color key="tintColor" name="Chocolate beauty"/>
+                                <color key="sectionIndexBackgroundColor" name="Background beauty"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainMovieFeedTableViewCell" id="L56-XF-OdE" customClass="MainMovieFeedTableViewCell" customModule="WhatToWatch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
@@ -26,18 +48,24 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L56-XF-OdE" id="IoC-lj-eoN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="Background beauty"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Background beauty"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IuU-jG-r8l"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background beauty"/>
                         <constraints>
                             <constraint firstItem="IuU-jG-r8l" firstAttribute="trailing" secondItem="sIo-Pu-VaW" secondAttribute="trailing" id="18k-ee-RBo"/>
                             <constraint firstItem="IuU-jG-r8l" firstAttribute="bottom" secondItem="sIo-Pu-VaW" secondAttribute="bottom" id="Cmz-zr-utm"/>
+                            <constraint firstAttribute="trailing" secondItem="usQ-Cj-G8D" secondAttribute="trailing" id="IWD-Rv-aw3"/>
                             <constraint firstItem="sIo-Pu-VaW" firstAttribute="top" secondItem="IuU-jG-r8l" secondAttribute="top" id="V8W-Cu-f5r"/>
+                            <constraint firstItem="sIo-Pu-VaW" firstAttribute="top" secondItem="usQ-Cj-G8D" secondAttribute="bottom" id="YuS-wM-tAJ"/>
                             <constraint firstItem="sIo-Pu-VaW" firstAttribute="leading" secondItem="IuU-jG-r8l" secondAttribute="leading" id="iSC-6w-9Rv"/>
+                            <constraint firstItem="usQ-Cj-G8D" firstAttribute="leading" secondItem="8d4-R7-0KB" secondAttribute="leading" id="qv8-Vc-kB2"/>
+                            <constraint firstItem="usQ-Cj-G8D" firstAttribute="top" secondItem="8d4-R7-0KB" secondAttribute="top" id="yc7-Xq-5pr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JDi-fP-sMu"/>
@@ -62,7 +90,8 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Pfj-SJ-XzF">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="Background beauty"/>
+                                        <color key="tintColor" name="Chocolate beauty"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailTableViewCell" id="ihZ-B5-yvR" customClass="DetailTableViewCell" customModule="WhatToWatch" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
@@ -85,7 +114,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0sF-rb-Hq4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background beauty"/>
                         <constraints>
                             <constraint firstItem="HV8-H6-9cx" firstAttribute="top" secondItem="0sF-rb-Hq4" secondAttribute="top" id="Fs9-U2-3lk"/>
                             <constraint firstItem="HV8-H6-9cx" firstAttribute="leading" secondItem="0sF-rb-Hq4" secondAttribute="leading" id="idF-RL-zpJ"/>
@@ -110,9 +139,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXI-gJ-kFi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iml-bi-23E">
+                                        <rect key="frame" x="20" y="66" width="374" height="27"/>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
+                                        <color key="textColor" name="TextDark beauty"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="Background beauty"/>
+                                <color key="tintColor" name="Chocolate beauty"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Iml-bi-23E" secondAttribute="bottom" constant="20" id="JRc-Zo-KaW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Iml-bi-23E" secondAttribute="trailing" constant="20" id="JzZ-Hs-jwM"/>
+                                    <constraint firstItem="Iml-bi-23E" firstAttribute="leading" secondItem="gXI-gJ-kFi" secondAttribute="leading" constant="20" id="l54-j5-e2S"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="40K-Ec-nke">
-                                <rect key="frame" x="0.0" y="167" width="414" height="729"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="163" width="414" height="733"/>
+                                <color key="backgroundColor" name="Background beauty"/>
+                                <color key="tintColor" name="Chocolate beauty"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DiscoverTableViewCell" id="phd-so-Ngm">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -124,22 +172,32 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Make a search." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8q-WX-PS8">
-                                <rect key="frame" x="0.0" y="133" width="414" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search movies.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8q-WX-PS8">
+                                <rect key="frame" x="20" y="113" width="374" height="40"/>
+                                <color key="backgroundColor" name="TextDark beauty"/>
+                                <color key="tintColor" name="Chocolate beauty"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ulh-Dd-ac0"/>
+                                </constraints>
+                                <color key="textColor" name="Background beauty"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jto-X5-hXt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background beauty"/>
                         <constraints>
-                            <constraint firstItem="I8q-WX-PS8" firstAttribute="leading" secondItem="jto-X5-hXt" secondAttribute="leading" id="0sZ-bp-FCF"/>
-                            <constraint firstItem="40K-Ec-nke" firstAttribute="top" secondItem="I8q-WX-PS8" secondAttribute="bottom" id="5qm-st-spy"/>
+                            <constraint firstItem="I8q-WX-PS8" firstAttribute="leading" secondItem="jto-X5-hXt" secondAttribute="leading" constant="20" id="0sZ-bp-FCF"/>
+                            <constraint firstItem="40K-Ec-nke" firstAttribute="top" secondItem="I8q-WX-PS8" secondAttribute="bottom" constant="10" id="5qm-st-spy"/>
+                            <constraint firstItem="gXI-gJ-kFi" firstAttribute="leading" secondItem="jto-X5-hXt" secondAttribute="leading" id="8qY-Ew-i0a"/>
+                            <constraint firstItem="gXI-gJ-kFi" firstAttribute="trailing" secondItem="jto-X5-hXt" secondAttribute="trailing" id="9AJ-ES-PhQ"/>
                             <constraint firstItem="40K-Ec-nke" firstAttribute="trailing" secondItem="jto-X5-hXt" secondAttribute="trailing" id="9Kb-IZ-jbE"/>
+                            <constraint firstItem="I8q-WX-PS8" firstAttribute="top" secondItem="gXI-gJ-kFi" secondAttribute="bottom" id="MvE-aS-JIY"/>
+                            <constraint firstItem="gXI-gJ-kFi" firstAttribute="top" secondItem="8VI-gB-chP" secondAttribute="top" id="NWU-8t-AOa"/>
                             <constraint firstItem="40K-Ec-nke" firstAttribute="leading" secondItem="jto-X5-hXt" secondAttribute="leading" id="YvB-JX-X3Y"/>
                             <constraint firstAttribute="bottom" secondItem="40K-Ec-nke" secondAttribute="bottom" id="dnh-w5-Nvj"/>
-                            <constraint firstItem="jto-X5-hXt" firstAttribute="trailing" secondItem="I8q-WX-PS8" secondAttribute="trailing" id="tp1-DR-5aM"/>
-                            <constraint firstItem="I8q-WX-PS8" firstAttribute="top" secondItem="jto-X5-hXt" secondAttribute="top" constant="45" id="u6K-qy-B8D"/>
+                            <constraint firstItem="jto-X5-hXt" firstAttribute="trailing" secondItem="I8q-WX-PS8" secondAttribute="trailing" constant="20" id="tp1-DR-5aM"/>
+                            <constraint firstItem="I8q-WX-PS8" firstAttribute="top" secondItem="jto-X5-hXt" secondAttribute="top" constant="25" id="u6K-qy-B8D"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2KB-AW-pbr"/>
@@ -159,7 +217,10 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Br7-iQ-Ej2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="Background beauty"/>
+                        <color key="tintColor" name="Chocolate beauty"/>
+                        <color key="barTintColor" name="Background beauty"/>
+                        <color key="selectedImageTintColor" name="TextDark beauty"/>
                     </tabBar>
                     <connections>
                         <segue destination="7W6-v2-BVF" kind="relationship" relationship="viewControllers" id="sb3-cl-T0r"/>
@@ -179,9 +240,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEi-wn-mRn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WatchList" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40D-9G-kl8">
+                                        <rect key="frame" x="20" y="66" width="374" height="27"/>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
+                                        <color key="textColor" name="TextDark beauty"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="Background beauty"/>
+                                <color key="tintColor" name="Chocolate beauty"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="40D-9G-kl8" secondAttribute="trailing" constant="20" id="H2T-gn-yEt"/>
+                                    <constraint firstItem="40D-9G-kl8" firstAttribute="leading" secondItem="KEi-wn-mRn" secondAttribute="leading" constant="20" id="V8F-1l-Q3J"/>
+                                    <constraint firstAttribute="bottom" secondItem="40D-9G-kl8" secondAttribute="bottom" constant="20" id="XBi-DL-Kdz"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZVS-E3-NvU">
-                                <rect key="frame" x="0.0" y="128" width="414" height="685"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="113" width="414" height="700"/>
+                                <color key="backgroundColor" name="Background beauty"/>
+                                <color key="tintColor" name="Chocolate beauty"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="szf-B9-IBm">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -195,10 +275,14 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nh7-eh-yyH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background beauty"/>
                         <constraints>
-                            <constraint firstItem="ZVS-E3-NvU" firstAttribute="top" secondItem="Nh7-eh-yyH" secondAttribute="top" constant="40" id="CiE-6W-XVH"/>
+                            <constraint firstItem="KEi-wn-mRn" firstAttribute="leading" secondItem="Nh7-eh-yyH" secondAttribute="leading" id="3IY-An-d5y"/>
+                            <constraint firstItem="ZVS-E3-NvU" firstAttribute="top" secondItem="Nh7-eh-yyH" secondAttribute="top" constant="25" id="CiE-6W-XVH"/>
+                            <constraint firstItem="ZVS-E3-NvU" firstAttribute="top" secondItem="KEi-wn-mRn" secondAttribute="bottom" id="Ftv-Rl-TWm"/>
+                            <constraint firstItem="Nh7-eh-yyH" firstAttribute="trailing" secondItem="KEi-wn-mRn" secondAttribute="trailing" id="GpV-LF-tTA"/>
                             <constraint firstItem="Nh7-eh-yyH" firstAttribute="trailing" secondItem="ZVS-E3-NvU" secondAttribute="trailing" id="M6X-pm-RMt"/>
+                            <constraint firstItem="KEi-wn-mRn" firstAttribute="top" secondItem="NXl-rL-FHK" secondAttribute="top" id="kWL-dh-4hp"/>
                             <constraint firstItem="Nh7-eh-yyH" firstAttribute="bottom" secondItem="ZVS-E3-NvU" secondAttribute="bottom" id="niB-zw-Mjh"/>
                             <constraint firstItem="ZVS-E3-NvU" firstAttribute="leading" secondItem="Nh7-eh-yyH" secondAttribute="leading" id="z3C-LQ-2cr"/>
                         </constraints>
@@ -244,7 +328,8 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b1G-Rk-awp">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="Background beauty"/>
+                                        <color key="tintColor" name="Chocolate beauty"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailTableViewCell" id="4FI-aV-ITz" customClass="DetailTableViewCell" customModule="WhatToWatch" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
@@ -267,7 +352,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Atx-fC-mds"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background beauty"/>
                         <constraints>
                             <constraint firstItem="Atx-fC-mds" firstAttribute="bottom" secondItem="R0b-kf-37X" secondAttribute="bottom" id="3bC-qb-Woi"/>
                             <constraint firstItem="Atx-fC-mds" firstAttribute="trailing" secondItem="R0b-kf-37X" secondAttribute="trailing" id="EK1-I0-fzy"/>
@@ -327,6 +412,15 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="Background beauty">
+            <color red="0.22699999809265137" green="0.2199999988079071" blue="0.27099999785423279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Chocolate beauty">
+            <color red="0.50999999046325684" green="0.43500000238418579" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextDark beauty">
+            <color red="0.96899998188018799" green="0.92500001192092896" blue="0.87099999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -40,7 +40,8 @@ class SearchViewCell: UITableViewCell {
     }
     
     func buttonConfiguration(button: UIButton) {
-        button.layer.cornerRadius = 10
+        let size = watchListButton.frame.width
+        button.layer.cornerRadius = size / 2
     }
     
     

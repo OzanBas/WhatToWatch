@@ -17,6 +17,13 @@ class FeedCollectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        feedCellLabel.text = "Preview"
+    }
+    
+    func configureCell() {
+        let height = self.frame.height
+        let width = self.frame.width
+        
+        feedCellImage.heightAnchor.constraint(equalToConstant: height * 0.8).isActive = true
+        feedCellImage.widthAnchor.constraint(equalToConstant: width * 0.8).isActive = true
     }
 }

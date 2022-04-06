@@ -45,7 +45,6 @@ class MainTabBarController: UIViewController , NavigationProtocol{
 //MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainMovieTableView.rowHeight = view.frame.height / 2.4
         
         mainMovieTableView.delegate = self
         mainMovieTableView.dataSource = self
@@ -60,10 +59,10 @@ class MainTabBarController: UIViewController , NavigationProtocol{
 //MARK: - HELPER FUNCS
     //configure ui
     func setupTableView() {
-
+        mainMovieTableView.register(UINib(nibName: "MainMovieFeedTableViewCell", bundle: nil), forCellReuseIdentifier: "MainMovieFeedTableViewCell")
         mainMovieTableView.translatesAutoresizingMaskIntoConstraints = false
         mainMovieTableView.rowHeight = view.frame.height / 2.6 + 60
-        mainMovieTableView.register(UINib(nibName: "MainMovieFeedTableViewCell", bundle: nil), forCellReuseIdentifier: "MainMovieFeedTableViewCell")
+
     }
     
 
@@ -135,7 +134,6 @@ extension MainTabBarController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainMovieFeedTableViewCell", for: indexPath) as! MainMovieFeedTableViewCell
         
-        cell.feedTitleLabel.font = .boldSystemFont(ofSize: view.frame.width / 13)
         cell.navigationDelegate = self
         cell.feedTitleLabel.text = titlesToBeFetched[indexPath.row]
         let cellTitle = cell.feedTitleLabel.text

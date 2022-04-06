@@ -34,6 +34,7 @@ class MainMovieFeedTableViewCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "FeedCollectionCell", bundle: nil), forCellWithReuseIdentifier: "FeedCollectionCell")
         configureCollectionView()
+        configureCellTitle()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -46,10 +47,14 @@ class MainMovieFeedTableViewCell: UITableViewCell {
     }
     
     func configureCollectionViewCell(cell: FeedCollectionCell) {
-        cell.feedCellImage.layer.cornerRadius = 5
+ //       let size = cell.feedCellImage.frame.height
+        cell.feedCellImage.layer.cornerRadius = 10
         
     }
-
+    func configureCellTitle() {
+        let height = self.frame.height
+        feedTitleLabel.heightAnchor.constraint(equalToConstant: height / 10).isActive = true
+    }
     
 }
 
@@ -61,6 +66,7 @@ extension MainMovieFeedTableViewCell: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedCollectionCell", for: indexPath) as! FeedCollectionCell
         configureCollectionViewCell(cell: cell)
+
         
         cell.feedCellLabel.text = model[indexPath.row].title
         
@@ -71,7 +77,9 @@ extension MainMovieFeedTableViewCell: UICollectionViewDataSource, UICollectionVi
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: cellView.frame.width / 2.4, height: cellView.frame.size.width * 0.7)
+        let height = self.frame.height
+        let width = self.frame.width
+        return CGSize(width: width * 0.46 , height: height * 0.78)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

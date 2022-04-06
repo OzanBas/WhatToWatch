@@ -88,6 +88,8 @@ class SearchDetailViewController: UIViewController {
     func similarCellConfig(cell: SearchViewCell, indexPath: IndexPath) {
         cell.similarMoviesButton.isHidden = true
         cell.detailsButton.isHidden = true
+        let width = cell.watchListButton.frame.width
+        cell.watchListButton.layer.cornerRadius = width / 2
         
         cell.scoreLabel.displayFloatOptional(float: similarMovies[indexPath.row].vote_average, headline: "Score: ")
         if let posterPath = similarMovies[indexPath.row].poster_path {

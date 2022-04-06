@@ -27,6 +27,9 @@ class DiscoverViewController: UIViewController {
         
         searchTextField.delegate = self
         configureTableView()
+        
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
     }
     
     //MARK: - HELPERS
@@ -109,6 +112,7 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - TEXTFIELD EXTENSION
 extension DiscoverViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.resignFirstResponder()
         return searchTextField.endEditing(true)
     }
     
