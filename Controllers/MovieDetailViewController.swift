@@ -15,6 +15,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var detailTableView: UITableView!
     var movieData : Movies?
     var DM = DataManagement()
+    @IBOutlet weak var titleLabel: UILabel!
     
     
     //MARK: - LIFECYCLE
@@ -32,6 +33,7 @@ class MovieDetailViewController: UIViewController {
         detailTableView.rowHeight = view.frame.height * 0.8
         detailTableView.alwaysBounceVertical = false
         detailTableView.reloadData()
+        self.titleLabel.text = movieData?.title
     }
     
     
@@ -48,6 +50,10 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as! DetailTableViewCell
         cell.delegate = self
+        
+        cell.watchlistButton.setImage(UIImage(systemName: "star"), for: .normal)
+
+
         
         if let posterPath = movieData?.poster_path {
             cell.detailCoverImageView.setCoverImage(posterPath: posterPath)

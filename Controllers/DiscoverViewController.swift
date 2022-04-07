@@ -13,14 +13,27 @@ class DiscoverViewController: UIViewController {
     
     //MARK: - PROPERTIES
     
+    @IBOutlet weak var alertView: UIView!
+    @IBOutlet weak var alertLabel: UILabel!
     @IBOutlet weak var discoverTableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
-    var movie : [Movies] = []
     var similarMovies : [Movies] = []
     var watchlistDelegate : WatchlistProtocol?
     var watchlistVC = MyWatchlistController()
     var DM = DataManagement()
-    
+    var movie : [Movies] = [] {
+        didSet {
+            if movie.count == 0 {
+                if searchTextField.hasText == true {
+                    alertView.isHidden = false
+                    alertLabel.text = "No results."
+                }
+            } else {
+                self.alertView.isHidden = true
+            }
+        }
+    }
+
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +43,11 @@ class DiscoverViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
+        
+        searchTextField.addTarget(self, action: #selector(actionTextFieldIsEditingChanged), for: UIControl.Event.editingChanged)
+        
+        alertView.isHidden = false
+        alertLabel.text = "Browse movies online."
     }
     
     //MARK: - HELPERS
@@ -94,6 +112,8 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
         cell.detailsButton.row = indexPath.row
         cell.similarMoviesButton.row = indexPath.row
         cell.watchListButton.row = indexPath.row
+        cell.watchListButton.setImage(UIImage(systemName: "star"), for: .normal)
+
         
         
         cell.releaseLabel.displayStringOptional(string: movie[indexPath.row].release_date, headline: "Release: ")
@@ -122,6 +142,15 @@ extension DiscoverViewController: UITextFieldDelegate {
             let correctedText = text.replacingOccurrences(of: " ", with: "+")
             let url = Endpoints().movieSearch(query: correctedText)
             searchMovie(url: url)
+        }
+    }
+
+    @objc func actionTextFieldIsEditingChanged(sender: UITextField) {
+        if sender.text?.isEmpty == true {
+            movie = []
+            discoverTableView.reloadData()
+            alertView.isHidden = false
+            alertLabel.text = "Browse movies online."
         }
     }
     

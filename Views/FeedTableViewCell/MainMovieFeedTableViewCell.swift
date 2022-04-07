@@ -37,6 +37,7 @@ class MainMovieFeedTableViewCell: UITableViewCell {
         configureCellTitle()
     }
 
+    //MARK: - HELPERS
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
@@ -58,6 +59,7 @@ class MainMovieFeedTableViewCell: UITableViewCell {
     
 }
 
+//MARK: - TABLEVIEW EXTENSION
 extension MainMovieFeedTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.count

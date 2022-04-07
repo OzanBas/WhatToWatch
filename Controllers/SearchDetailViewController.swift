@@ -18,6 +18,8 @@ class SearchDetailViewController: UIViewController {
     
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     
     var buildType : BuildType?
     
@@ -32,6 +34,7 @@ class SearchDetailViewController: UIViewController {
        
         if buildType == .buildForDetail {
             configureDetailTableView()
+            setTitleForDetail()
         } else {
             configureSimilarTableView()
         }
@@ -54,6 +57,10 @@ class SearchDetailViewController: UIViewController {
     }
     
 //MARK: - FOR DETAIL BUILD
+    func setTitleForDetail() {
+        titleLabel.text = movieData?.title
+    }
+    
     func configureDetailTableView() {
         tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailTableViewCell")
         tableView.rowHeight = view.frame.height * 0.8
@@ -112,10 +119,14 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell") as! DetailTableViewCell
             cell.delegate = self
             detailCellConfig(cell: cell)
+            cell.watchlistButton.setImage(UIImage(systemName: "star"), for: .normal)
+
             return cell
         } else { // cell building for similar api search
             let cell = tableView.dequeueReusableCell(withIdentifier: "SearchViewCell") as! SearchViewCell
             cell.delegate = self
+            cell.watchListButton.setImage(UIImage(systemName: "star"), for: .normal)
+
             cell.watchListButton.row = indexPath.row
             similarCellConfig(cell: cell, indexPath: indexPath)
             return cell

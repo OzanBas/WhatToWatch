@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,8 +24,8 @@
                                 <rect key="frame" x="5" y="5" width="134" height="190"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="Background beauty"/>
-                        <color key="tintColor" name="Chocolate beauty"/>
+                        <color key="backgroundColor" name="German Black"/>
+                        <color key="tintColor" name="German Beige"/>
                         <constraints>
                             <constraint firstItem="nui-Gh-BhE" firstAttribute="leading" secondItem="8p4-BU-8Yz" secondAttribute="leading" constant="5" id="3Z4-XX-abT"/>
                             <constraint firstItem="nui-Gh-BhE" firstAttribute="top" secondItem="8p4-BU-8Yz" secondAttribute="top" constant="5" id="4UK-eQ-tq4"/>
@@ -57,36 +56,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="b7Q-Al-jKc">
-                                <rect key="frame" x="30" y="141.5" width="176" height="45"/>
+                                <rect key="frame" x="85" y="141.5" width="110" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-tm-Odq" customClass="CustomUIButton" customModule="WhatToWatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
-                                        <color key="backgroundColor" name="ButtonDark beauty"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="FJN-y3-EiS"/>
-                                            <constraint firstAttribute="width" constant="45" id="Giz-J5-jQ1"/>
-                                            <constraint firstAttribute="height" constant="45" id="u7D-bv-Pgq"/>
-                                        </constraints>
-                                        <color key="tintColor" name="ButtonLight beauty"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="" cornerStyle="capsule">
-                                            <backgroundConfiguration key="background" imageContentMode="center">
-                                                <imageReference key="image" image="star.fill" catalog="system" symbolScale="default"/>
-                                            </backgroundConfiguration>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="watchlistButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OcW-NM-FfV"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idh-iS-oLF" customClass="CustomUIButton" customModule="WhatToWatch" customModuleProvider="target">
-                                        <rect key="frame" x="65.5" y="0.0" width="45" height="45"/>
-                                        <color key="backgroundColor" name="ButtonDark beauty"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                        <color key="backgroundColor" name="German Yellow"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="XOp-Nc-Lc0"/>
                                             <constraint firstAttribute="height" constant="45" id="grI-0Q-4hk"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="uv9-ah-REn"/>
                                         </constraints>
-                                        <color key="tintColor" name="ButtonLight beauty"/>
+                                        <color key="tintColor" name="Background beauty"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="" cornerStyle="capsule">
                                             <backgroundConfiguration key="background" image="info.circle" catalog="system" imageContentMode="center"/>
@@ -97,14 +77,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJG-sG-gxo" customClass="CustomUIButton" customModule="WhatToWatch" customModuleProvider="target">
-                                        <rect key="frame" x="131" y="0.0" width="45" height="45"/>
-                                        <color key="backgroundColor" name="ButtonDark beauty"/>
+                                        <rect key="frame" x="65" y="0.0" width="45" height="45"/>
+                                        <color key="backgroundColor" name="German Yellow"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="6VK-wj-BKm"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="7Yb-ci-as3"/>
                                             <constraint firstAttribute="width" constant="45" id="9ur-gD-CxG"/>
                                         </constraints>
-                                        <color key="tintColor" name="ButtonLight beauty"/>
+                                        <color key="tintColor" name="Background beauty"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="" cornerStyle="capsule">
                                             <backgroundConfiguration key="background" image="circle.hexagongrid.fill" catalog="system" imageContentMode="center"/>
@@ -116,11 +96,28 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-tm-Odq" customClass="CustomUIButton" customModule="WhatToWatch" customModuleProvider="target">
+                                <rect key="frame" x="20" y="141.5" width="45" height="45"/>
+                                <color key="backgroundColor" name="German Red"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="Giz-J5-jQ1"/>
+                                    <constraint firstAttribute="height" constant="45" id="u7D-bv-Pgq"/>
+                                </constraints>
+                                <color key="tintColor" name="Background beauty"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="watchlistButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OcW-NM-FfV"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" name="Background beauty"/>
-                        <color key="tintColor" name="Chocolate beauty"/>
+                        <color key="backgroundColor" name="German Black"/>
+                        <color key="tintColor" name="German Beige"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="b7Q-Al-jKc" secondAttribute="trailing" constant="30" id="EOE-7J-UeL"/>
+                            <constraint firstItem="r6W-tm-Odq" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="20" id="0es-73-xVX"/>
+                            <constraint firstItem="b7Q-Al-jKc" firstAttribute="leading" secondItem="r6W-tm-Odq" secondAttribute="trailing" constant="20" id="9oC-LR-0tO"/>
                             <constraint firstAttribute="trailing" secondItem="oeE-nr-QLs" secondAttribute="trailing" constant="20" id="H7V-tO-df0"/>
                             <constraint firstItem="IKd-AX-lw9" firstAttribute="top" secondItem="GmM-8I-72h" secondAttribute="top" constant="20" id="WtU-0K-w3u"/>
                             <constraint firstAttribute="trailing" secondItem="IKd-AX-lw9" secondAttribute="trailing" constant="20" id="Xrc-Eo-aul"/>
@@ -130,8 +127,8 @@
                             <constraint firstItem="oeE-nr-QLs" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="20" id="nbz-wK-gMx"/>
                             <constraint firstItem="IKd-AX-lw9" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="20" id="nuR-MB-rU8"/>
                             <constraint firstAttribute="trailing" secondItem="CQs-T0-ZIf" secondAttribute="trailing" constant="20" id="qUT-KK-3OA"/>
-                            <constraint firstItem="b7Q-Al-jKc" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="30" id="s0x-Dd-uMr"/>
                             <constraint firstItem="CQs-T0-ZIf" firstAttribute="top" secondItem="oeE-nr-QLs" secondAttribute="bottom" constant="20" id="wW5-oL-GaY"/>
+                            <constraint firstItem="r6W-tm-Odq" firstAttribute="centerY" secondItem="Idh-iS-oLF" secondAttribute="centerY" id="xtq-yI-Sj6"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -161,18 +158,20 @@
     <resources>
         <image name="circle.hexagongrid.fill" catalog="system" width="128" height="112"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="Background beauty">
             <color red="0.22699999809265137" green="0.2199999988079071" blue="0.27099999785423279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="ButtonDark beauty">
-            <color red="0.77600002288818359" green="0.60799998044967651" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="German Beige">
+            <color red="0.90196078431372551" green="0.83529411764705885" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="ButtonLight beauty">
-            <color red="0.96899998188018799" green="0.80000001192092896" blue="0.67500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="German Black">
+            <color red="0.10588235294117647" green="0.10196078431372549" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Chocolate beauty">
-            <color red="0.50999999046325684" green="0.43500000238418579" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="German Red">
+            <color red="0.89411764705882346" green="0.34509803921568627" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="German Yellow">
+            <color red="0.94117647058823528" green="0.6470588235294118" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextLight beauty">
             <color red="0.98400002717971802" green="0.97299998998641968" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

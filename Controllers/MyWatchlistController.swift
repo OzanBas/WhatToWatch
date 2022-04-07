@@ -15,8 +15,19 @@ class MyWatchlistController: UIViewController {
     
     @IBOutlet weak var watchlistTableView: UITableView!
     
+    @IBOutlet weak var emptyView: UIView!
     let DM = DataManagement()
-    var movieList : [Movies] = []
+    
+    var movieList : [Movies] = [] {
+        didSet {
+            if self.movieList.count > 0 {
+                self.emptyView.isHidden = true
+            } else {
+                self.emptyView.isHidden = false
+            }
+        }
+    }
+    
     var similarMovies : [Movies] = []
     
     
@@ -30,6 +41,7 @@ class MyWatchlistController: UIViewController {
         super.viewWillAppear(animated)
         configureTableView()
         refreshMovieList()
+
 
         watchlistTableView.reloadData()
     }
@@ -99,13 +111,14 @@ extension MyWatchlistController: UITableViewDataSource, UITableViewDelegate {
         cell.similarMoviesButton.row = indexPath.row
         cell.watchListButton.row = indexPath.row
         
+        cell.watchListButton.setImage(UIImage(systemName: "trash"), for: .normal)
+        
         cell.releaseLabel.displayStringOptional(string: movieList[indexPath.row].release_date, headline: "Release: ")
         cell.titleLabel.displayStringOptional(string: movieList[indexPath.row].original_title, headline: "Title: ")
         cell.scoreLabel.displayFloatOptional(float: movieList[indexPath.row].vote_average, headline: "Score: ")
         if let posterPath = movieList[indexPath.row].poster_path {
             cell.coverImage.setCoverImage(posterPath: posterPath)
         }
-        
         
         return cell
     }
@@ -116,10 +129,10 @@ extension MyWatchlistController: FeatureButtonsProtocol {
     func userDidRequestWatchList(atRow: Int) {
         let selectedMovie = movieList[atRow]
         DM.handleFavorites(movie: selectedMovie)
-        print(movieList.count)
         DispatchQueue.main.async {
             self.refreshMovieList()
             self.watchlistTableView.reloadData()
+            print(self.movieList.count)
         }
         
     }
