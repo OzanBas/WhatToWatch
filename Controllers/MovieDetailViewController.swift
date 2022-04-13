@@ -24,7 +24,11 @@ class MovieDetailViewController: UIViewController {
         configureTableView()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DM.retrieveData()
+        detailTableView.reloadData()
+    }
     //MARK: - HELPERS
     func configureTableView() {
         detailTableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailTableViewCell")
@@ -51,18 +55,17 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as! DetailTableViewCell
         cell.delegate = self
         
-        cell.watchlistButton.setImage(UIImage(systemName: "star"), for: .normal)
-
-
-        
         if let posterPath = movieData?.poster_path {
             cell.detailCoverImageView.setCoverImage(posterPath: posterPath)
         }
-        //MARK: - QUESTION: HOW TO HANDLE DYNAMIC CONSTRAINS IN INTERFACE BUILDER INSTEAD PROGRAMMATICALY??
+
         cell.detailCoverImageView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.48).isActive = true
         cell.detailCoverImageView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.35).isActive = true
         cell.detailCoverImageView.layer.cornerRadius = 5
-
+        
+        if let movieData = movieData {
+            cell.watchlistButtonStateConfiguration(initialMovie: movieData, movieData: DM.favoritesList)
+        }
         cell.releaseDateLabel.attributedTextDisplay(headline: "Release: ", info: handleStringOptional(string: movieData?.release_date))
         cell.voteCountLabel.attributedTextDisplay(headline: "Votes: ", info: handleIntOptional(int: movieData?.vote_count))
         cell.voteScoreLabel.attributedTextDisplay(headline: "Score: ", info: handleFloatOptional(float: movieData?.vote_average))

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4F-UZ-VTz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Discover View Controller-->
+        <scene sceneID="LbF-OP-FZM">
+            <objects>
+                <viewController id="vmS-RS-tnV" customClass="DiscoverViewController" customModule="WhatToWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F9A-VH-jzi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kKF-LT-fki">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0p-Lp-6PR">
+                                        <rect key="frame" x="153.5" y="43" width="107" height="27"/>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
+                                        <color key="textColor" name="TextDark beauty"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="German Black"/>
+                                <color key="tintColor" name="German Beige"/>
+                                <constraints>
+                                    <constraint firstItem="X0p-Lp-6PR" firstAttribute="centerY" secondItem="kKF-LT-fki" secondAttribute="centerY" id="kI2-H7-pNt"/>
+                                    <constraint firstItem="X0p-Lp-6PR" firstAttribute="centerX" secondItem="kKF-LT-fki" secondAttribute="centerX" id="rSk-LW-CGs"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qre-aH-0xW">
+                                <rect key="frame" x="0.0" y="163" width="414" height="733"/>
+                                <color key="backgroundColor" name="German Black"/>
+                                <color key="tintColor" name="German Beige"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DiscoverTableViewCell" id="Wuv-LN-OfT">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wuv-LN-OfT" id="l3k-fR-atO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBJ-eI-hj9" userLabel="Alert View">
+                                <rect key="frame" x="0.0" y="153" width="414" height="743"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BG-ca-Tgw">
+                                        <rect key="frame" x="156" y="298.5" width="102.5" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" name="TextDark beauty"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="German Black"/>
+                                <constraints>
+                                    <constraint firstItem="0BG-ca-Tgw" firstAttribute="centerX" secondItem="bBJ-eI-hj9" secondAttribute="centerX" id="sLN-O7-v5O"/>
+                                    <constraint firstItem="0BG-ca-Tgw" firstAttribute="centerY" secondItem="bBJ-eI-hj9" secondAttribute="centerY" constant="-60" id="wnC-k3-xUT"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search movies.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="05f-W9-44A">
+                                <rect key="frame" x="20" y="113" width="374" height="40"/>
+                                <color key="backgroundColor" name="TextDark beauty"/>
+                                <color key="tintColor" name="Chocolate beauty"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bXR-am-3CP"/>
+                                </constraints>
+                                <color key="textColor" name="Background beauty"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ohw-sk-ftn"/>
+                        <color key="backgroundColor" name="German Black"/>
+                        <color key="tintColor" name="German Beige"/>
+                        <constraints>
+                            <constraint firstItem="05f-W9-44A" firstAttribute="top" secondItem="kKF-LT-fki" secondAttribute="bottom" id="0rK-le-b06"/>
+                            <constraint firstItem="kKF-LT-fki" firstAttribute="top" secondItem="F9A-VH-jzi" secondAttribute="top" id="7gI-oh-4U8"/>
+                            <constraint firstItem="kKF-LT-fki" firstAttribute="trailing" secondItem="Ohw-sk-ftn" secondAttribute="trailing" id="AQ8-Rm-bG1"/>
+                            <constraint firstAttribute="bottom" secondItem="bBJ-eI-hj9" secondAttribute="bottom" id="E3a-sH-mdX"/>
+                            <constraint firstAttribute="bottom" secondItem="qre-aH-0xW" secondAttribute="bottom" id="FR9-DU-HKS"/>
+                            <constraint firstItem="qre-aH-0xW" firstAttribute="trailing" secondItem="Ohw-sk-ftn" secondAttribute="trailing" id="GMx-V7-paP"/>
+                            <constraint firstItem="Ohw-sk-ftn" firstAttribute="trailing" secondItem="05f-W9-44A" secondAttribute="trailing" constant="20" id="M5c-Rv-VHF"/>
+                            <constraint firstItem="kKF-LT-fki" firstAttribute="leading" secondItem="Ohw-sk-ftn" secondAttribute="leading" id="RYn-fp-4ns"/>
+                            <constraint firstItem="bBJ-eI-hj9" firstAttribute="top" secondItem="05f-W9-44A" secondAttribute="bottom" id="SYZ-lS-lwe"/>
+                            <constraint firstItem="05f-W9-44A" firstAttribute="leading" secondItem="Ohw-sk-ftn" secondAttribute="leading" constant="20" id="XsR-0O-YyB"/>
+                            <constraint firstItem="qre-aH-0xW" firstAttribute="top" secondItem="05f-W9-44A" secondAttribute="bottom" constant="10" id="bfi-Sh-2Y7"/>
+                            <constraint firstItem="bBJ-eI-hj9" firstAttribute="leading" secondItem="Ohw-sk-ftn" secondAttribute="leading" id="f9k-1O-CvT"/>
+                            <constraint firstItem="bBJ-eI-hj9" firstAttribute="trailing" secondItem="Ohw-sk-ftn" secondAttribute="trailing" id="hUi-8K-3Ly"/>
+                            <constraint firstItem="05f-W9-44A" firstAttribute="top" secondItem="Ohw-sk-ftn" secondAttribute="top" constant="25" id="j2i-d5-Ayi"/>
+                            <constraint firstItem="bBJ-eI-hj9" firstAttribute="trailing" secondItem="Ohw-sk-ftn" secondAttribute="trailing" id="niL-zI-Hg8"/>
+                            <constraint firstAttribute="bottom" secondItem="bBJ-eI-hj9" secondAttribute="bottom" id="pLc-mj-am7"/>
+                            <constraint firstItem="qre-aH-0xW" firstAttribute="leading" secondItem="Ohw-sk-ftn" secondAttribute="leading" id="xcS-k2-YJM"/>
+                            <constraint firstItem="bBJ-eI-hj9" firstAttribute="top" secondItem="05f-W9-44A" secondAttribute="bottom" id="ybO-Ac-RiZ"/>
+                            <constraint firstItem="bBJ-eI-hj9" firstAttribute="leading" secondItem="Ohw-sk-ftn" secondAttribute="leading" id="zTq-z9-b1f"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KE6-DU-FJr">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ES4-qY-QdU"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="alertLabel" destination="0BG-ca-Tgw" id="LAz-Go-AH6"/>
+                        <outlet property="alertView" destination="bBJ-eI-hj9" id="Nik-AA-XUq"/>
+                        <outlet property="discoverTableView" destination="qre-aH-0xW" id="gxO-J7-eHi"/>
+                        <outlet property="searchTextField" destination="05f-W9-44A" id="H2J-Vu-5vL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B7e-Jn-hTc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1313" y="563"/>
+        </scene>
+        <!--Search Detail View Controller-->
+        <scene sceneID="FhZ-Ui-Bnm">
+            <objects>
+                <viewController storyboardIdentifier="SearchDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bxd-Eb-RAU" customClass="SearchDetailViewController" customModule="WhatToWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZCn-gv-kVh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YJ-Qu-MkI" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Similar Movies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upW-AF-jxQ">
+                                        <rect key="frame" x="117" y="43" width="180.5" height="27"/>
+                                        <color key="backgroundColor" name="German Black"/>
+                                        <color key="tintColor" name="German Beige"/>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
+                                        <color key="textColor" name="TextDark beauty"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="German Black"/>
+                                <color key="tintColor" name="German Beige"/>
+                                <constraints>
+                                    <constraint firstItem="upW-AF-jxQ" firstAttribute="centerY" secondItem="7YJ-Qu-MkI" secondAttribute="centerY" id="Vjt-rP-VB5"/>
+                                    <constraint firstItem="upW-AF-jxQ" firstAttribute="centerX" secondItem="7YJ-Qu-MkI" secondAttribute="centerX" id="eWC-eg-FFP"/>
+                                    <constraint firstAttribute="height" constant="113" id="emR-sm-dPY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3v-i9-5jU">
+                                <rect key="frame" x="0.0" y="113" width="414" height="783"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cMI-ec-lB8">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="783"/>
+                                        <color key="backgroundColor" name="German Black"/>
+                                        <color key="tintColor" name="German Beige"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailTableViewCell" id="UpK-nZ-yxC" customClass="DetailTableViewCell" customModule="WhatToWatch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UpK-nZ-yxC" id="tWy-wO-XcF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" name="German Black"/>
+                                <constraints>
+                                    <constraint firstItem="cMI-ec-lB8" firstAttribute="top" secondItem="t3v-i9-5jU" secondAttribute="top" id="4yt-GT-osj"/>
+                                    <constraint firstAttribute="bottom" secondItem="cMI-ec-lB8" secondAttribute="bottom" id="5xb-lY-qpe"/>
+                                    <constraint firstItem="cMI-ec-lB8" firstAttribute="leading" secondItem="t3v-i9-5jU" secondAttribute="leading" id="Aa8-VL-KsV"/>
+                                    <constraint firstAttribute="trailing" secondItem="cMI-ec-lB8" secondAttribute="trailing" id="fVC-WR-ig7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y1L-XL-Jdv"/>
+                        <color key="backgroundColor" name="German Black"/>
+                        <color key="tintColor" name="German Beige"/>
+                        <constraints>
+                            <constraint firstItem="7YJ-Qu-MkI" firstAttribute="top" secondItem="ZCn-gv-kVh" secondAttribute="top" id="OK7-6O-ag8"/>
+                            <constraint firstItem="t3v-i9-5jU" firstAttribute="top" secondItem="7YJ-Qu-MkI" secondAttribute="bottom" id="Uc9-jC-gB9"/>
+                            <constraint firstItem="7YJ-Qu-MkI" firstAttribute="trailing" secondItem="y1L-XL-Jdv" secondAttribute="trailing" id="dLB-Zw-mIH"/>
+                            <constraint firstAttribute="bottom" secondItem="t3v-i9-5jU" secondAttribute="bottom" id="eyU-TL-PEC"/>
+                            <constraint firstItem="7YJ-Qu-MkI" firstAttribute="leading" secondItem="y1L-XL-Jdv" secondAttribute="leading" id="fOr-yp-AJP"/>
+                            <constraint firstItem="t3v-i9-5jU" firstAttribute="leading" secondItem="y1L-XL-Jdv" secondAttribute="leading" id="ok0-Po-UDY"/>
+                            <constraint firstItem="t3v-i9-5jU" firstAttribute="trailing" secondItem="y1L-XL-Jdv" secondAttribute="trailing" id="vfN-eV-hzi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zVa-DA-HoY">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Odj-jH-a3I"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="cMI-ec-lB8" id="8Hl-cu-pF9"/>
+                        <outlet property="titleLabel" destination="upW-AF-jxQ" id="4ER-jl-nhK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k7T-qY-hJz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2166.666666666667" y="562.5"/>
+        </scene>
+        <!--Discover-->
+        <scene sceneID="KD5-3E-TMY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M4F-UZ-VTz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discover" image="magnifyingglass" catalog="system" id="sBv-3B-g1D"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z6B-cH-yBv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vmS-RS-tnV" kind="relationship" relationship="rootViewController" id="NLv-aM-EIV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Uj-WL-heV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="431.8840579710145" y="562.5"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="German Red"/>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <namedColor name="Background beauty">
+            <color red="0.22699999809265137" green="0.2199999988079071" blue="0.27099999785423279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Chocolate beauty">
+            <color red="0.50999999046325684" green="0.43500000238418579" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="German Beige">
+            <color red="0.90200001001358032" green="0.83499997854232788" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="German Black">
+            <color red="0.10599999874830246" green="0.10199999809265137" blue="0.090000003576278687" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="German Red">
+            <color red="0.89399999380111694" green="0.3449999988079071" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextDark beauty">
+            <color red="0.96899998188018799" green="0.92500001192092896" blue="0.87099999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

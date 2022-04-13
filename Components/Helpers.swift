@@ -8,7 +8,7 @@
 import Foundation
 
 
-public func handleStringOptional(string: String?) -> String {
+func handleStringOptional(string: String?) -> String {
 
     if let string = string {
         let newString = String("\(string)")

@@ -41,6 +41,11 @@ class SearchDetailViewController: UIViewController {
         tableView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DM.retrieveData()
+        tableView.reloadData()
+    }
     
     //MARK: - BUILDSTYLE
     
@@ -75,6 +80,7 @@ class SearchDetailViewController: UIViewController {
         cell.detailCoverImageView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.48).isActive = true
         cell.detailCoverImageView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.35).isActive = true
         cell.detailCoverImageView.layer.cornerRadius = 5
+        
         cell.releaseDateLabel.attributedTextDisplay(headline: "Release: ", info: handleStringOptional(string: movieData?.release_date))
         cell.voteCountLabel.attributedTextDisplay(headline: "Votes: ", info: handleIntOptional(int: movieData?.vote_count))
         cell.voteScoreLabel.attributedTextDisplay(headline: "Score: ", info: handleFloatOptional(float: movieData?.vote_average))
@@ -83,6 +89,9 @@ class SearchDetailViewController: UIViewController {
         cell.overviewValue.text = handleStringOptional(string: movieData?.overview)
         if let posterPath = movieData?.poster_path {
             cell.detailCoverImageView.setCoverImage(posterPath: posterPath)
+        }
+        if let movieData = movieData {
+            cell.watchlistButtonStateConfiguration(initialMovie: movieData, movieData: DM.favoritesList)
         }
     }
     
@@ -109,6 +118,8 @@ class SearchDetailViewController: UIViewController {
         cell.titleLabel.attributedTextDisplay(headline: "Title: ", info: handleStringOptional(string: initialMovie.title))
         cell.scoreLabel.attributedTextDisplay(headline: "Score: ", info: handleFloatOptional(float: initialMovie.vote_average))
         cell.genreLabel.attributedTextDisplay(headline: "Genre: ", info: handleStringOptional(string: initialMovie.genres))
+        
+        cell.watchlistButtonStateConfiguration(initialMovie: initialMovie, movieData: DM.favoritesList)
     }
 
     func rowCountForSimilar() -> Int {
@@ -124,13 +135,11 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell") as! DetailTableViewCell
             cell.delegate = self
             detailCellConfig(cell: cell)
-            cell.watchlistButton.setImage(UIImage(systemName: "star"), for: .normal)
 
             return cell
         } else { // cell building for similar api search
             let cell = tableView.dequeueReusableCell(withIdentifier: "SearchViewCell") as! SearchViewCell
             cell.delegate = self
-            cell.watchListButton.setImage(UIImage(systemName: "star"), for: .normal)
 
             cell.watchListButton.row = indexPath.row
             similarCellConfig(cell: cell, indexPath: indexPath)

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EmP-aN-0cZ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Watchlist Controller-->
+        <scene sceneID="83Z-qp-DZv">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="72d-JO-hAG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="mW6-Iy-Fnt" customClass="MyWatchlistController" customModule="WhatToWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="80n-Zx-meg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKD-2a-ojq" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WatchList" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IW0-U8-x2E">
+                                        <rect key="frame" x="145.5" y="43" width="123" height="27"/>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
+                                        <color key="textColor" name="TextDark beauty"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="German Black"/>
+                                <color key="tintColor" name="German Beige"/>
+                                <constraints>
+                                    <constraint firstItem="IW0-U8-x2E" firstAttribute="centerY" secondItem="PKD-2a-ojq" secondAttribute="centerY" id="Phc-1J-yUg"/>
+                                    <constraint firstItem="IW0-U8-x2E" firstAttribute="centerX" secondItem="PKD-2a-ojq" secondAttribute="centerX" id="wI1-MQ-8Oj"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="u2c-ro-aJc">
+                                <rect key="frame" x="0.0" y="113" width="414" height="749"/>
+                                <color key="backgroundColor" name="German Black"/>
+                                <color key="tintColor" name="German Beige"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Qhc-au-S7d">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qhc-au-S7d" id="Ol1-OY-MVM">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8i6-yt-D3a">
+                                <rect key="frame" x="0.0" y="113" width="414" height="749"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Watchlist is empty." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odb-Lf-Ebr">
+                                        <rect key="frame" x="94.5" y="321.5" width="225.5" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" name="TextDark beauty"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="German Black"/>
+                                <constraints>
+                                    <constraint firstItem="Odb-Lf-Ebr" firstAttribute="centerX" secondItem="8i6-yt-D3a" secondAttribute="centerX" id="V64-4z-dVy"/>
+                                    <constraint firstItem="Odb-Lf-Ebr" firstAttribute="centerY" secondItem="8i6-yt-D3a" secondAttribute="centerY" constant="-40" id="mCO-sa-AGj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aon-M4-yfx"/>
+                        <color key="backgroundColor" name="German Black"/>
+                        <color key="tintColor" name="German Beige"/>
+                        <constraints>
+                            <constraint firstItem="u2c-ro-aJc" firstAttribute="leading" secondItem="aon-M4-yfx" secondAttribute="leading" id="8A9-XC-9gi"/>
+                            <constraint firstItem="aon-M4-yfx" firstAttribute="bottom" secondItem="u2c-ro-aJc" secondAttribute="bottom" id="9Ee-fX-HDt"/>
+                            <constraint firstItem="8i6-yt-D3a" firstAttribute="top" secondItem="PKD-2a-ojq" secondAttribute="bottom" id="M6h-js-kkS"/>
+                            <constraint firstItem="u2c-ro-aJc" firstAttribute="top" secondItem="aon-M4-yfx" secondAttribute="top" constant="25" id="WNb-y6-pMw"/>
+                            <constraint firstItem="8i6-yt-D3a" firstAttribute="leading" secondItem="aon-M4-yfx" secondAttribute="leading" id="Z2X-Do-6qc"/>
+                            <constraint firstItem="PKD-2a-ojq" firstAttribute="leading" secondItem="aon-M4-yfx" secondAttribute="leading" id="ZdL-AT-doQ"/>
+                            <constraint firstItem="PKD-2a-ojq" firstAttribute="top" secondItem="80n-Zx-meg" secondAttribute="top" id="aUF-9d-zPb"/>
+                            <constraint firstItem="u2c-ro-aJc" firstAttribute="top" secondItem="PKD-2a-ojq" secondAttribute="bottom" id="bPh-tc-0Tk"/>
+                            <constraint firstItem="aon-M4-yfx" firstAttribute="bottom" secondItem="8i6-yt-D3a" secondAttribute="bottom" id="c1q-Zl-b0d"/>
+                            <constraint firstItem="aon-M4-yfx" firstAttribute="trailing" secondItem="PKD-2a-ojq" secondAttribute="trailing" id="eGa-AK-Pz6"/>
+                            <constraint firstItem="8i6-yt-D3a" firstAttribute="trailing" secondItem="aon-M4-yfx" secondAttribute="trailing" id="g1G-TO-MAq"/>
+                            <constraint firstItem="aon-M4-yfx" firstAttribute="trailing" secondItem="u2c-ro-aJc" secondAttribute="trailing" id="kc8-OL-jow"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Ek-YZ-iLW">
+                        <barButtonItem key="backBarButtonItem" title=" " id="hg9-Qn-qGL"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emptyView" destination="8i6-yt-D3a" id="wiV-9B-FDv"/>
+                        <outlet property="watchlistTableView" destination="u2c-ro-aJc" id="xNC-4v-nPV"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1313" y="1296"/>
+        </scene>
+        <!--MyWatchlist-->
+        <scene sceneID="Rxa-d1-guo">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RbJ-xE-7Y7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EmP-aN-0cZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="MyWatchlist" image="star.fill" catalog="system" id="C8c-Lq-AlL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="le2-fJ-suw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mW6-Iy-Fnt" kind="relationship" relationship="rootViewController" id="Tl6-Lt-nwo"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="431.8840579710145" y="1296.4285714285713"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="German Red"/>
+    <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="German Beige">
+            <color red="0.90200001001358032" green="0.83499997854232788" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="German Black">
+            <color red="0.10599999874830246" green="0.10199999809265137" blue="0.090000003576278687" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="German Red">
+            <color red="0.89399999380111694" green="0.3449999988079071" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextDark beauty">
+            <color red="0.96899998188018799" green="0.92500001192092896" blue="0.87099999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

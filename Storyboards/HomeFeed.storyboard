@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WbU-Ev-1dl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="03r-6e-jZH">
+            <objects>
+                <viewController id="hsc-X5-Xhd" customClass="MainTabBarController" customModule="WhatToWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f7k-UN-Hml">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bi7-kI-gwW" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WhatToWatch?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7I-x5-hGb">
+                                        <rect key="frame" x="113.5" y="43" width="187.5" height="27"/>
+                                        <color key="backgroundColor" name="German Black"/>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
+                                        <color key="textColor" name="TextDark beauty"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="German Black"/>
+                                <color key="tintColor" name="German Beige"/>
+                                <constraints>
+                                    <constraint firstItem="n7I-x5-hGb" firstAttribute="centerY" secondItem="bi7-kI-gwW" secondAttribute="centerY" id="YFg-lj-Fb9"/>
+                                    <constraint firstAttribute="height" constant="113" id="geS-oq-132"/>
+                                    <constraint firstItem="n7I-x5-hGb" firstAttribute="centerX" secondItem="bi7-kI-gwW" secondAttribute="centerX" id="hYy-N2-CeR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INz-Ub-EAz">
+                                <rect key="frame" x="0.0" y="113" width="414" height="783"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eR5-3n-CIH">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="783"/>
+                                        <color key="backgroundColor" name="German Black"/>
+                                        <color key="tintColor" name="German Beige"/>
+                                        <color key="separatorColor" name="German Red"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainMovieFeedTableViewCell" id="lm3-SF-iAa" customClass="MainMovieFeedTableViewCell" customModule="WhatToWatch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lm3-SF-iAa" id="iVZ-er-G7s">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" name="German Black"/>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" name="German Black"/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eR5-3n-CIH" secondAttribute="trailing" id="ab3-ln-0ka"/>
+                                    <constraint firstItem="eR5-3n-CIH" firstAttribute="top" secondItem="INz-Ub-EAz" secondAttribute="top" id="n4G-Or-qAJ"/>
+                                    <constraint firstItem="eR5-3n-CIH" firstAttribute="leading" secondItem="INz-Ub-EAz" secondAttribute="leading" id="s8J-8M-hWI"/>
+                                    <constraint firstAttribute="bottom" secondItem="eR5-3n-CIH" secondAttribute="bottom" id="xRw-lv-AIM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="K2x-8U-JYI"/>
+                        <color key="backgroundColor" name="German Black"/>
+                        <color key="tintColor" name="German Beige"/>
+                        <constraints>
+                            <constraint firstItem="INz-Ub-EAz" firstAttribute="top" secondItem="bi7-kI-gwW" secondAttribute="bottom" id="7bR-DO-mqY"/>
+                            <constraint firstItem="bi7-kI-gwW" firstAttribute="leading" secondItem="f7k-UN-Hml" secondAttribute="leading" id="Cta-19-N7d"/>
+                            <constraint firstItem="bi7-kI-gwW" firstAttribute="top" secondItem="f7k-UN-Hml" secondAttribute="top" id="ETm-W9-JhH"/>
+                            <constraint firstItem="INz-Ub-EAz" firstAttribute="trailing" secondItem="K2x-8U-JYI" secondAttribute="trailing" id="TS7-GK-mni"/>
+                            <constraint firstAttribute="trailing" secondItem="bi7-kI-gwW" secondAttribute="trailing" id="Vbd-5z-n3o"/>
+                            <constraint firstItem="INz-Ub-EAz" firstAttribute="leading" secondItem="K2x-8U-JYI" secondAttribute="leading" id="fte-wX-Zg6"/>
+                            <constraint firstAttribute="bottom" secondItem="INz-Ub-EAz" secondAttribute="bottom" id="sFS-5V-Lkj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ylf-P9-Wut">
+                        <barButtonItem key="backBarButtonItem" title=" " id="b5P-NF-2uI"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mainMovieTableView" destination="eR5-3n-CIH" id="RPd-bV-hk1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I3c-LK-EID" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1313.0434782608697" y="-123.21428571428571"/>
+        </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="p6a-J5-rbW">
+            <objects>
+                <viewController storyboardIdentifier="DetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x7I-XG-Swo" customClass="MovieDetailViewController" customModule="WhatToWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ryw-K2-44t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8dg-qb-AnY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcs-fn-frL">
+                                        <rect key="frame" x="143" y="43" width="128.5" height="27"/>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
+                                        <color key="textColor" name="TextDark beauty"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="German Black"/>
+                                <color key="tintColor" name="German Black"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="1CO-xD-ZiC"/>
+                                    <constraint firstItem="Bcs-fn-frL" firstAttribute="centerX" secondItem="8dg-qb-AnY" secondAttribute="centerX" id="AfS-LI-prU"/>
+                                    <constraint firstItem="Bcs-fn-frL" firstAttribute="centerY" secondItem="8dg-qb-AnY" secondAttribute="centerY" id="qoZ-5m-08b"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHV-Yo-bK0">
+                                <rect key="frame" x="0.0" y="113" width="414" height="749"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fCg-Be-MeO">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="749"/>
+                                        <color key="backgroundColor" name="German Black"/>
+                                        <color key="tintColor" name="German Beige"/>
+                                        <color key="sectionIndexBackgroundColor" name="German Black"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailTableViewCell" id="r1a-NZ-hSl" customClass="DetailTableViewCell" customModule="WhatToWatch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r1a-NZ-hSl" id="nzv-fa-DLR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" name="German Black"/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" name="German Black"/>
+                                <color key="tintColor" name="German Black"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fCg-Be-MeO" secondAttribute="trailing" id="9Z7-Q7-IDu"/>
+                                    <constraint firstItem="fCg-Be-MeO" firstAttribute="top" secondItem="pHV-Yo-bK0" secondAttribute="top" id="UlH-Fr-hG7"/>
+                                    <constraint firstItem="fCg-Be-MeO" firstAttribute="leading" secondItem="pHV-Yo-bK0" secondAttribute="leading" id="iVi-eA-SYX"/>
+                                    <constraint firstAttribute="bottom" secondItem="fCg-Be-MeO" secondAttribute="bottom" id="lrV-xH-8Wa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tcL-a5-Kih"/>
+                        <color key="backgroundColor" name="German Black"/>
+                        <color key="tintColor" name="German Beige"/>
+                        <constraints>
+                            <constraint firstItem="8dg-qb-AnY" firstAttribute="top" secondItem="Ryw-K2-44t" secondAttribute="top" id="3Wl-Yy-aQz"/>
+                            <constraint firstItem="tcL-a5-Kih" firstAttribute="bottom" secondItem="pHV-Yo-bK0" secondAttribute="bottom" id="I5B-3A-j6X"/>
+                            <constraint firstItem="8dg-qb-AnY" firstAttribute="leading" secondItem="tcL-a5-Kih" secondAttribute="leading" id="a2R-XN-Nb1"/>
+                            <constraint firstItem="pHV-Yo-bK0" firstAttribute="top" secondItem="8dg-qb-AnY" secondAttribute="bottom" id="dRx-GK-HrX"/>
+                            <constraint firstItem="tcL-a5-Kih" firstAttribute="trailing" secondItem="pHV-Yo-bK0" secondAttribute="trailing" id="oKJ-Y9-fmb"/>
+                            <constraint firstItem="pHV-Yo-bK0" firstAttribute="leading" secondItem="tcL-a5-Kih" secondAttribute="leading" id="oZk-tr-muA"/>
+                            <constraint firstItem="8dg-qb-AnY" firstAttribute="trailing" secondItem="tcL-a5-Kih" secondAttribute="trailing" id="uV8-wn-Gms"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uqb-Co-vrS">
+                        <barButtonItem key="backBarButtonItem" title=" " id="7bo-WM-aQx"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="detailTableView" destination="fCg-Be-MeO" id="S9T-9T-ERn"/>
+                        <outlet property="titleLabel" destination="Bcs-fn-frL" id="BO5-Q3-783"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ee-6A-rsm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2157" y="-123"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="1h3-l2-Il0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WbU-Ev-1dl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="z2H-BN-8gC"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d9W-i3-RWb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hsc-X5-Xhd" kind="relationship" relationship="rootViewController" id="XCq-TH-VJ4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jBC-97-Laz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="431.8840579710145" y="-123.21428571428571"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="German Red"/>
+    <resources>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <namedColor name="German Beige">
+            <color red="0.90200001001358032" green="0.83499997854232788" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="German Black">
+            <color red="0.10599999874830246" green="0.10199999809265137" blue="0.090000003576278687" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="German Red">
+            <color red="0.89399999380111694" green="0.3449999988079071" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextDark beauty">
+            <color red="0.96899998188018799" green="0.92500001192092896" blue="0.87099999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

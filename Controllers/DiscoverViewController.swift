@@ -185,7 +185,7 @@ extension DiscoverViewController: FeatureButtonsProtocol {
     
     func userDidRequestDetails(atRow: Int) {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Discover", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "SearchDetailVC") as! SearchDetailViewController
         
         nextViewController.movieData = movie[atRow]
@@ -197,7 +197,7 @@ extension DiscoverViewController: FeatureButtonsProtocol {
     
     func userDidRequestSimilar(atRow: Int) {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Discover", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "SearchDetailVC") as! SearchDetailViewController
         similarApiCall(atRow: atRow, showVC: nextViewController) {
             DispatchQueue.main.async {

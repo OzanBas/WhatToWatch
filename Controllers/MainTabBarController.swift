@@ -114,7 +114,7 @@ class MainTabBarController: UIViewController , NavigationProtocol{
     //MARK: - NavigationProtocol Function
     func moveToDetailVC(movie: Movies) {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "HomeFeed", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "DetailVC") as! MovieDetailViewController
         
         nextViewController.movieData = movie

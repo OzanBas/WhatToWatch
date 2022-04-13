@@ -37,8 +37,25 @@ class DetailTableViewCell: UITableViewCell {
 
     }
     
+    func watchlistButtonStateConfiguration(initialMovie: Movies, movieData: [Movies]) {
+        
+        if movieData.contains(initialMovie) {
+            self.watchlistButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        } else {
+            self.watchlistButton.setImage(UIImage(systemName: "star"), for: .normal)
+            
+        }
+    }
+    
     @IBAction func watchlistButtonTapped(_ sender: UIButton) {
         delegate?.userDidRequestWatchList()
+        DispatchQueue.main.async {
+            if self.watchlistButton.imageView?.image == UIImage(systemName: "star") {
+                self.watchlistButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            } else {
+                self.watchlistButton.setImage(UIImage(systemName: "star"), for: .normal)
+            }
+        }
     }
     
 }

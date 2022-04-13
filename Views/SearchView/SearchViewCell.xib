@@ -50,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="b7Q-Al-jKc">
-                                <rect key="frame" x="85" y="140" width="110" height="45"/>
+                                <rect key="frame" x="85" y="137" width="110" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idh-iS-oLF" customClass="CustomUIButton" customModule="WhatToWatch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
@@ -91,7 +91,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-tm-Odq" customClass="CustomUIButton" customModule="WhatToWatch" customModuleProvider="target">
-                                <rect key="frame" x="20" y="140" width="45" height="45"/>
+                                <rect key="frame" x="20" y="137" width="45" height="45"/>
                                 <color key="backgroundColor" name="German Red"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="Giz-J5-jQ1"/>
@@ -130,10 +130,10 @@
                             <constraint firstItem="CQs-T0-ZIf" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="20" id="bPU-kM-jtc"/>
                             <constraint firstItem="oeE-nr-QLs" firstAttribute="top" secondItem="CQs-T0-ZIf" secondAttribute="bottom" constant="10" id="f0g-uW-NYV"/>
                             <constraint firstAttribute="trailing" secondItem="Wlj-y8-kmY" secondAttribute="trailing" constant="20" id="hfB-5i-N5M"/>
-                            <constraint firstAttribute="bottom" secondItem="b7Q-Al-jKc" secondAttribute="bottom" constant="15" id="kHu-Tf-NSa"/>
                             <constraint firstItem="oeE-nr-QLs" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="20" id="nbz-wK-gMx"/>
                             <constraint firstItem="IKd-AX-lw9" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="20" id="nuR-MB-rU8"/>
                             <constraint firstAttribute="trailing" secondItem="CQs-T0-ZIf" secondAttribute="trailing" constant="20" id="qUT-KK-3OA"/>
+                            <constraint firstItem="b7Q-Al-jKc" firstAttribute="top" secondItem="oeE-nr-QLs" secondAttribute="bottom" constant="10" id="s2R-bm-0kS"/>
                             <constraint firstItem="Wlj-y8-kmY" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="20" id="ttq-cY-rbJ"/>
                             <constraint firstItem="Wlj-y8-kmY" firstAttribute="top" secondItem="IKd-AX-lw9" secondAttribute="bottom" constant="10" id="xP7-gc-7J0"/>
                             <constraint firstItem="r6W-tm-Odq" firstAttribute="centerY" secondItem="Idh-iS-oLF" secondAttribute="centerY" id="xtq-yI-Sj6"/>

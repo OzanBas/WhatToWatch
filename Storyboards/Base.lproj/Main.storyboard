@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GJ2-Em-Bb0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="5A7-6M-eNy">
+            <objects>
+                <tabBarController id="GJ2-Em-Bb0" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Br7-iQ-Ej2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="German Black"/>
+                        <color key="tintColor" name="German Beige"/>
+                        <color key="barTintColor" name="German Black"/>
+                        <color key="selectedImageTintColor" name="German Red"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Mny-Uy-sjA" kind="relationship" relationship="viewControllers" id="AuZ-C7-Mjv"/>
+                        <segue destination="2Ea-7v-s45" kind="relationship" relationship="viewControllers" id="fPB-rE-MST"/>
+                        <segue destination="jYE-yK-Ohh" kind="relationship" relationship="viewControllers" id="1Qg-QP-i1F"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SeJ-0n-n0s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-696" y="563"/>
+        </scene>
+        <!--HomeFeed-->
+        <scene sceneID="5sl-8r-auA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeFeed" id="Mny-Uy-sjA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="WAV-Nd-Xoa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MTA-Oh-KzG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1091" y="1035"/>
+        </scene>
+        <!--Watchlist-->
+        <scene sceneID="i4n-E7-4GA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Watchlist" id="2Ea-7v-s45" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="xeR-d4-NbY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vIQ-Po-Pyi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-696" y="1035"/>
+        </scene>
+        <!--Discover-->
+        <scene sceneID="bRc-Q8-57N">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Discover" id="jYE-yK-Ohh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Zaw-v6-J1g"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Emp-ao-0Qt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-309" y="1035"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="German Red"/>
+    <resources>
+        <namedColor name="German Beige">
+            <color red="0.90200001001358032" green="0.83499997854232788" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="German Black">
+            <color red="0.10599999874830246" green="0.10199999809265137" blue="0.090000003576278687" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="German Red">
+            <color red="0.89399999380111694" green="0.3449999988079071" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
