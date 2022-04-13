@@ -50,7 +50,17 @@ class DiscoverViewController: UIViewController {
         alertLabel.text = "Browse movies online."
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DM.retrieveData()
+        discoverTableView.reloadData()
+    }
     //MARK: - HELPERS
+    
+
+    
+    
     
 //    configure TableView
     func configureTableView() {
@@ -106,22 +116,29 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchViewCell") as! SearchViewCell
-//      SearchViewCell delegate
+        let initialMovie = movie[indexPath.row]
+
+        //SearchViewCell delegate
         cell.delegate = self
         
         cell.detailsButton.row = indexPath.row
         cell.similarMoviesButton.row = indexPath.row
         cell.watchListButton.row = indexPath.row
-        cell.watchListButton.setImage(UIImage(systemName: "star"), for: .normal)
+        
+        //WatchlistButtonState
+        cell.watchlistButtonStateConfiguration(initialMovie: initialMovie, movieData: DM.favoritesList)
 
         
+        //cellConfiguration
+        cell.releaseLabel.attributedTextDisplay(headline: "Release: ", info: handleStringOptional(string: initialMovie.release_date))
+        cell.titleLabel.attributedTextDisplay(headline: "Title: ", info: handleStringOptional(string: initialMovie.title))
+        cell.scoreLabel.attributedTextDisplay(headline: "Score: ", info: handleFloatOptional(float: initialMovie.vote_average))
+        cell.genreLabel.attributedTextDisplay(headline: "Genre: ", info: handleStringOptional(string: initialMovie.genres))
         
-        cell.releaseLabel.displayStringOptional(string: movie[indexPath.row].release_date, headline: "Release: ")
-        cell.titleLabel.displayStringOptional(string: movie[indexPath.row].original_title, headline: "Title: ")
-        cell.scoreLabel.displayFloatOptional(float: movie[indexPath.row].vote_average, headline: "Score: ")
         if let posterPath = movie[indexPath.row].poster_path {
             cell.coverImage.setCoverImage(posterPath: posterPath)
         }
+        
         
         return cell
     }

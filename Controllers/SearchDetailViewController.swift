@@ -75,14 +75,15 @@ class SearchDetailViewController: UIViewController {
         cell.detailCoverImageView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.48).isActive = true
         cell.detailCoverImageView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.35).isActive = true
         cell.detailCoverImageView.layer.cornerRadius = 5
-        cell.overviewValue.displayStringOptional(string: movieData?.overview, headline: "")
-        cell.languageLabel.displayStringOptional(string: movieData?.original_language, headline: "Language: ")
-        cell.voteCountLabel.displayIntOptional(int: movieData?.vote_count, headline: "Votes: ")
-        cell.releaseDateLabel.displayStringOptional(string: movieData?.release_date, headline: "Release: ")
+        cell.releaseDateLabel.attributedTextDisplay(headline: "Release: ", info: handleStringOptional(string: movieData?.release_date))
+        cell.voteCountLabel.attributedTextDisplay(headline: "Votes: ", info: handleIntOptional(int: movieData?.vote_count))
+        cell.voteScoreLabel.attributedTextDisplay(headline: "Score: ", info: handleFloatOptional(float: movieData?.vote_average))
+        cell.languageLabel.attributedTextDisplay(headline: "Language: ", info: handleStringOptional(string: movieData?.original_language))
+        cell.genreLabel.attributedTextDisplay(headline: "Genre: ", info: handleStringOptional(string: movieData?.genres))
+        cell.overviewValue.text = handleStringOptional(string: movieData?.overview)
         if let posterPath = movieData?.poster_path {
             cell.detailCoverImageView.setCoverImage(posterPath: posterPath)
         }
-        cell.voteScoreLabel.displayFloatOptional(float: movieData?.vote_average, headline: "Score: ")
     }
     
     
@@ -98,12 +99,16 @@ class SearchDetailViewController: UIViewController {
         let width = cell.watchListButton.frame.width
         cell.watchListButton.layer.cornerRadius = width / 2
         
-        cell.scoreLabel.displayFloatOptional(float: similarMovies[indexPath.row].vote_average, headline: "Score: ")
         if let posterPath = similarMovies[indexPath.row].poster_path {
             cell.coverImage.setCoverImage(posterPath: posterPath)
         }
-        cell.titleLabel.displayStringOptional(string: similarMovies[indexPath.row].title, headline: "Title: ")
-        cell.releaseLabel.displayStringOptional(string: similarMovies[indexPath.row].release_date, headline: "Release: ")
+        
+        let initialMovie = similarMovies[indexPath.row]
+        
+        cell.releaseLabel.attributedTextDisplay(headline: "Release: ", info: handleStringOptional(string: initialMovie.release_date))
+        cell.titleLabel.attributedTextDisplay(headline: "Title: ", info: handleStringOptional(string: initialMovie.title))
+        cell.scoreLabel.attributedTextDisplay(headline: "Score: ", info: handleFloatOptional(float: initialMovie.vote_average))
+        cell.genreLabel.attributedTextDisplay(headline: "Genre: ", info: handleStringOptional(string: initialMovie.genres))
     }
 
     func rowCountForSimilar() -> Int {

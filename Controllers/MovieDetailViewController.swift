@@ -63,11 +63,14 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
         cell.detailCoverImageView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.35).isActive = true
         cell.detailCoverImageView.layer.cornerRadius = 5
 
-        cell.releaseDateLabel.displayStringOptional(string: movieData?.release_date, headline: "Release: ")
-        cell.voteCountLabel.displayIntOptional(int: movieData?.vote_count, headline: "Votes: ")
-        cell.voteScoreLabel.displayFloatOptional(float: movieData?.vote_average, headline: "Score: ")
-        cell.languageLabel.displayStringOptional(string: movieData?.original_language, headline: "Language: ")
+        cell.releaseDateLabel.attributedTextDisplay(headline: "Release: ", info: handleStringOptional(string: movieData?.release_date))
+        cell.voteCountLabel.attributedTextDisplay(headline: "Votes: ", info: handleIntOptional(int: movieData?.vote_count))
+        cell.voteScoreLabel.attributedTextDisplay(headline: "Score: ", info: handleFloatOptional(float: movieData?.vote_average))
+        cell.languageLabel.attributedTextDisplay(headline: "Language: ", info: handleStringOptional(string: movieData?.original_language))
+        cell.genreLabel.attributedTextDisplay(headline: "Genre: ", info: handleStringOptional(string: movieData?.genres))
         cell.overviewValue.text = movieData?.overview
+
+        
         return cell
     }
 }

@@ -113,9 +113,13 @@ extension MyWatchlistController: UITableViewDataSource, UITableViewDelegate {
         
         cell.watchListButton.setImage(UIImage(systemName: "trash"), for: .normal)
         
-        cell.releaseLabel.displayStringOptional(string: movieList[indexPath.row].release_date, headline: "Release: ")
-        cell.titleLabel.displayStringOptional(string: movieList[indexPath.row].original_title, headline: "Title: ")
-        cell.scoreLabel.displayFloatOptional(float: movieList[indexPath.row].vote_average, headline: "Score: ")
+        let initialMovie = movieList[indexPath.row]
+        
+        cell.releaseLabel.attributedTextDisplay(headline: "Release: ", info: handleStringOptional(string: initialMovie.release_date))
+        cell.titleLabel.attributedTextDisplay(headline: "Title: ", info: handleStringOptional(string: initialMovie.title))
+        cell.scoreLabel.attributedTextDisplay(headline: "Score: ", info: handleFloatOptional(float: initialMovie.vote_average))
+        cell.genreLabel.attributedTextDisplay(headline: "Genre: ", info: handleStringOptional(string: initialMovie.genres))
+        
         if let posterPath = movieList[indexPath.row].poster_path {
             cell.coverImage.setCoverImage(posterPath: posterPath)
         }

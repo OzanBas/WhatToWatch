@@ -19,6 +19,7 @@ class SearchViewCell: UITableViewCell {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var releaseLabel: UILabel!
     @IBOutlet weak var coverImage: UIImageView!
+    @IBOutlet weak var genreLabel: UILabel!
     
     @IBOutlet weak var watchListButton: CustomUIButton!
     @IBOutlet weak var detailsButton: CustomUIButton!
@@ -31,6 +32,7 @@ class SearchViewCell: UITableViewCell {
         buttonConfiguration(button: watchListButton)
         buttonConfiguration(button: detailsButton)
         buttonConfiguration(button: similarMoviesButton)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -44,9 +46,27 @@ class SearchViewCell: UITableViewCell {
         button.layer.cornerRadius = size / 2
     }
     
+    func watchlistButtonStateConfiguration(initialMovie: Movies, movieData: [Movies]) {
+        
+        if movieData.contains(initialMovie) {
+            self.watchListButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        } else {
+            self.watchListButton.setImage(UIImage(systemName: "star"), for: .normal)
+            
+        }
+    }
+    
+    
     
     @IBAction func watchlistButtonTapped(_ sender: CustomUIButton) {
         delegate?.userDidRequestWatchList(atRow: sender.row!)
+        DispatchQueue.main.async {
+            if self.watchListButton.imageView?.image == UIImage(systemName: "star") {
+                self.watchListButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            } else {
+                self.watchListButton.setImage(UIImage(systemName: "star"), for: .normal)
+            }
+        }
     }
     @IBAction func detailButtonTapped(_ sender: CustomUIButton) {
         delegate?.userDidRequestDetails(atRow: sender.row!)

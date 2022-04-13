@@ -38,25 +38,19 @@
                         <rect key="frame" x="139" y="0.0" width="236" height="200"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKd-AX-lw9">
-                                <rect key="frame" x="20" y="20" width="196" height="20.5"/>
+                                <rect key="frame" x="20" y="15" width="196" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="TextLight beauty"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeE-nr-QLs">
-                                <rect key="frame" x="20" y="60.5" width="196" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="TextLight beauty"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQs-T0-ZIf">
-                                <rect key="frame" x="20" y="101" width="196" height="20.5"/>
+                                <rect key="frame" x="20" y="106.5" width="196" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="TextLight beauty"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="b7Q-Al-jKc">
-                                <rect key="frame" x="85" y="141.5" width="110" height="45"/>
+                                <rect key="frame" x="85" y="140" width="110" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idh-iS-oLF" customClass="CustomUIButton" customModule="WhatToWatch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
@@ -97,7 +91,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-tm-Odq" customClass="CustomUIButton" customModule="WhatToWatch" customModuleProvider="target">
-                                <rect key="frame" x="20" y="141.5" width="45" height="45"/>
+                                <rect key="frame" x="20" y="140" width="45" height="45"/>
                                 <color key="backgroundColor" name="German Red"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="Giz-J5-jQ1"/>
@@ -112,6 +106,18 @@
                                     <action selector="watchlistButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OcW-NM-FfV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlj-y8-kmY">
+                                <rect key="frame" x="20" y="45.5" width="196" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="TextLight beauty"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQs-T0-ZIf">
+                                <rect key="frame" x="20" y="76" width="196" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="TextLight beauty"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="German Black"/>
                         <color key="tintColor" name="German Beige"/>
@@ -119,16 +125,19 @@
                             <constraint firstItem="r6W-tm-Odq" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="20" id="0es-73-xVX"/>
                             <constraint firstItem="b7Q-Al-jKc" firstAttribute="leading" secondItem="r6W-tm-Odq" secondAttribute="trailing" constant="20" id="9oC-LR-0tO"/>
                             <constraint firstAttribute="trailing" secondItem="oeE-nr-QLs" secondAttribute="trailing" constant="20" id="H7V-tO-df0"/>
-                            <constraint firstItem="IKd-AX-lw9" firstAttribute="top" secondItem="GmM-8I-72h" secondAttribute="top" constant="20" id="WtU-0K-w3u"/>
+                            <constraint firstItem="IKd-AX-lw9" firstAttribute="top" secondItem="GmM-8I-72h" secondAttribute="top" constant="15" id="WtU-0K-w3u"/>
                             <constraint firstAttribute="trailing" secondItem="IKd-AX-lw9" secondAttribute="trailing" constant="20" id="Xrc-Eo-aul"/>
-                            <constraint firstItem="b7Q-Al-jKc" firstAttribute="top" secondItem="CQs-T0-ZIf" secondAttribute="bottom" constant="20" id="YOr-iu-TI3"/>
                             <constraint firstItem="CQs-T0-ZIf" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="20" id="bPU-kM-jtc"/>
-                            <constraint firstItem="oeE-nr-QLs" firstAttribute="top" secondItem="IKd-AX-lw9" secondAttribute="bottom" constant="20" id="mif-1g-OQ4"/>
+                            <constraint firstItem="oeE-nr-QLs" firstAttribute="top" secondItem="CQs-T0-ZIf" secondAttribute="bottom" constant="10" id="f0g-uW-NYV"/>
+                            <constraint firstAttribute="trailing" secondItem="Wlj-y8-kmY" secondAttribute="trailing" constant="20" id="hfB-5i-N5M"/>
+                            <constraint firstAttribute="bottom" secondItem="b7Q-Al-jKc" secondAttribute="bottom" constant="15" id="kHu-Tf-NSa"/>
                             <constraint firstItem="oeE-nr-QLs" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="20" id="nbz-wK-gMx"/>
                             <constraint firstItem="IKd-AX-lw9" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="20" id="nuR-MB-rU8"/>
                             <constraint firstAttribute="trailing" secondItem="CQs-T0-ZIf" secondAttribute="trailing" constant="20" id="qUT-KK-3OA"/>
-                            <constraint firstItem="CQs-T0-ZIf" firstAttribute="top" secondItem="oeE-nr-QLs" secondAttribute="bottom" constant="20" id="wW5-oL-GaY"/>
+                            <constraint firstItem="Wlj-y8-kmY" firstAttribute="leading" secondItem="GmM-8I-72h" secondAttribute="leading" constant="20" id="ttq-cY-rbJ"/>
+                            <constraint firstItem="Wlj-y8-kmY" firstAttribute="top" secondItem="IKd-AX-lw9" secondAttribute="bottom" constant="10" id="xP7-gc-7J0"/>
                             <constraint firstItem="r6W-tm-Odq" firstAttribute="centerY" secondItem="Idh-iS-oLF" secondAttribute="centerY" id="xtq-yI-Sj6"/>
+                            <constraint firstItem="CQs-T0-ZIf" firstAttribute="top" secondItem="Wlj-y8-kmY" secondAttribute="bottom" constant="10" id="yRY-1C-yBY"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -146,6 +155,7 @@
             <connections>
                 <outlet property="coverImage" destination="nui-Gh-BhE" id="6bE-I4-c3n"/>
                 <outlet property="detailsButton" destination="Idh-iS-oLF" id="S3y-pb-WF6"/>
+                <outlet property="genreLabel" destination="Wlj-y8-kmY" id="4ZW-et-LHF"/>
                 <outlet property="releaseLabel" destination="CQs-T0-ZIf" id="ZjL-xd-2x5"/>
                 <outlet property="scoreLabel" destination="oeE-nr-QLs" id="SGi-VJ-yuG"/>
                 <outlet property="similarMoviesButton" destination="kJG-sG-gxo" id="L9i-5V-pMX"/>
@@ -162,16 +172,16 @@
             <color red="0.22699999809265137" green="0.2199999988079071" blue="0.27099999785423279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="German Beige">
-            <color red="0.90196078431372551" green="0.83529411764705885" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.90200001001358032" green="0.83499997854232788" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="German Black">
-            <color red="0.10588235294117647" green="0.10196078431372549" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.10599999874830246" green="0.10199999809265137" blue="0.090000003576278687" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="German Red">
-            <color red="0.89411764705882346" green="0.34509803921568627" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89399999380111694" green="0.3449999988079071" blue="0.14900000393390656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="German Yellow">
-            <color red="0.94117647058823528" green="0.6470588235294118" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94099998474121094" green="0.6470000147819519" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextLight beauty">
             <color red="0.98400002717971802" green="0.97299998998641968" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

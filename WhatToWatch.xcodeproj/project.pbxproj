@@ -11,7 +11,6 @@
 		3F63AF9F27F72F0B0008794F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63AF9E27F72F0B0008794F /* Protocols.swift */; };
 		3F63D39427D74BB8003F301F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63D39327D74BB8003F301F /* AppDelegate.swift */; };
 		3F63D39627D74BB8003F301F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63D39527D74BB8003F301F /* SceneDelegate.swift */; };
-		3F63D39827D74BB8003F301F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63D39727D74BB8003F301F /* ViewController.swift */; };
 		3F63D39B27D74BB8003F301F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F63D39927D74BB8003F301F /* Main.storyboard */; };
 		3F63D39D27D74BB9003F301F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F63D39C27D74BB9003F301F /* Assets.xcassets */; };
 		3F63D3A027D74BB9003F301F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F63D39E27D74BB9003F301F /* LaunchScreen.storyboard */; };
@@ -39,6 +38,7 @@
 		3F9D8CC727E877B6005C498B /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D8CC627E877B6005C498B /* DiscoverViewController.swift */; };
 		3F9D8CCB27E8AC97005C498B /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D8CC927E8AC97005C498B /* SearchViewCell.swift */; };
 		3F9D8CCC27E8AC97005C498B /* SearchViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9D8CCA27E8AC97005C498B /* SearchViewCell.xib */; };
+		3FD114CD280568FC003DE148 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD114CC280568FC003DE148 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +47,6 @@
 		3F63D39027D74BB8003F301F /* WhatToWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F63D39327D74BB8003F301F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F63D39527D74BB8003F301F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3F63D39727D74BB8003F301F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F63D39A27D74BB8003F301F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F63D39C27D74BB9003F301F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F63D39F27D74BB9003F301F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		3F9D8CC627E877B6005C498B /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		3F9D8CC927E8AC97005C498B /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		3F9D8CCA27E8AC97005C498B /* SearchViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewCell.xib; sourceTree = "<group>"; };
+		3FD114CC280568FC003DE148 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,12 +115,8 @@
 				3F63D3C527D74DC5003F301F /* Views */,
 				3F63D3C427D74DB1003F301F /* Models */,
 				3F63D3C327D74DA5003F301F /* Controllers */,
+				3FD114CB28005D7E003DE148 /* Components */,
 				3F63D3C227D74D99003F301F /* Extensions */,
-				3F9C352F27E9C6B2001C0110 /* UILabelExtension.swift */,
-				3F6B5F3B27F444B8005EE7E7 /* ArrayExtension.swift */,
-				3F9C353327EEF2DA001C0110 /* CustomUIButton.swift */,
-				3F63D3B327D74C58003F301F /* ImageViewExtension.swift */,
-				3F63D3B427D74C58003F301F /* UrlSessionExtension.swift */,
 				3F63D39127D74BB8003F301F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,7 +134,6 @@
 			children = (
 				3F63D39327D74BB8003F301F /* AppDelegate.swift */,
 				3F63D39527D74BB8003F301F /* SceneDelegate.swift */,
-				3F63D39727D74BB8003F301F /* ViewController.swift */,
 				3F63D39927D74BB8003F301F /* Main.storyboard */,
 				3F63D39C27D74BB9003F301F /* Assets.xcassets */,
 				3F63D39E27D74BB9003F301F /* LaunchScreen.storyboard */,
@@ -150,6 +145,10 @@
 		3F63D3C227D74D99003F301F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3F9C352F27E9C6B2001C0110 /* UILabelExtension.swift */,
+				3F6B5F3B27F444B8005EE7E7 /* ArrayExtension.swift */,
+				3F63D3B327D74C58003F301F /* ImageViewExtension.swift */,
+				3F63D3B427D74C58003F301F /* UrlSessionExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -230,6 +229,15 @@
 				3F9D8CCA27E8AC97005C498B /* SearchViewCell.xib */,
 			);
 			path = SearchView;
+			sourceTree = "<group>";
+		};
+		3FD114CB28005D7E003DE148 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3F9C353327EEF2DA001C0110 /* CustomUIButton.swift */,
+				3FD114CC280568FC003DE148 /* Helpers.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,7 +321,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F63D39827D74BB8003F301F /* ViewController.swift in Sources */,
 				3F9C353427EEF2DA001C0110 /* CustomUIButton.swift in Sources */,
 				3F63D39427D74BB8003F301F /* AppDelegate.swift in Sources */,
 				3F63D3BA27D74C6C003F301F /* MovieModel.swift in Sources */,
@@ -333,6 +340,7 @@
 				3F63D3B227D74C44003F301F /* MainMovieFeedTableViewCell.swift in Sources */,
 				3F63D3B627D74C58003F301F /* UrlSessionExtension.swift in Sources */,
 				3F63AF9C27F5D24C0008794F /* DataManagement.swift in Sources */,
+				3FD114CD280568FC003DE148 /* Helpers.swift in Sources */,
 				3F9C353627F2FD72001C0110 /* MyWatchlistController.swift in Sources */,
 				3F9C353027E9C6B2001C0110 /* UILabelExtension.swift in Sources */,
 				3F63D3CB27D794BC003F301F /* MovieDetailViewController.swift in Sources */,
