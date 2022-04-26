@@ -14,7 +14,11 @@ class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var detailTableView: UITableView!
     var movieData : Movies?
+    var movieCast : [Cast] = []
     var DM = DataManagement()
+    var service = DataService()
+    
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     
@@ -22,12 +26,19 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         DM.retrieveData()
         detailTableView.reloadData()
+        
+        if let movieData = movieData {
+            let id = String(movieData.id!)
+            service.fetchCredits(url: Endpoints().urlCredits(ofMovie: id), DetailVC: self)
+
+        }
     }
     //MARK: - HELPERS
     func configureTableView() {
@@ -54,6 +65,7 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as! DetailTableViewCell
         cell.delegate = self
+        cell.castModel = movieCast
         
         if let posterPath = movieData?.poster_path {
             cell.detailCoverImageView.setCoverImage(posterPath: posterPath)

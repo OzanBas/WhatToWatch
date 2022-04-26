@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F42AF892816E0D7009C63D0 /* CreditsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F42AF882816E0D7009C63D0 /* CreditsModel.swift */; };
 		3F63AF9C27F5D24C0008794F /* DataManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63AF9B27F5D24C0008794F /* DataManagement.swift */; };
 		3F63AF9F27F72F0B0008794F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63AF9E27F72F0B0008794F /* Protocols.swift */; };
 		3F63D39427D74BB8003F301F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63D39327D74BB8003F301F /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F42AF882816E0D7009C63D0 /* CreditsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsModel.swift; sourceTree = "<group>"; };
 		3F63AF9B27F5D24C0008794F /* DataManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagement.swift; sourceTree = "<group>"; };
 		3F63AF9E27F72F0B0008794F /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		3F63D39027D74BB8003F301F /* WhatToWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				3F63D3B727D74C6C003F301F /* MovieModel.swift */,
+				3F42AF882816E0D7009C63D0 /* CreditsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				3F63D39427D74BB8003F301F /* AppDelegate.swift in Sources */,
 				3F63D3BA27D74C6C003F301F /* MovieModel.swift in Sources */,
 				3F63D3CE27D7962F003F301F /* DetailTableViewCell.swift in Sources */,
+				3F42AF892816E0D7009C63D0 /* CreditsModel.swift in Sources */,
 				3F9D8CC727E877B6005C498B /* DiscoverViewController.swift in Sources */,
 				3F9D8CCB27E8AC97005C498B /* SearchViewCell.swift in Sources */,
 				3F63D39627D74BB8003F301F /* SceneDelegate.swift in Sources */,

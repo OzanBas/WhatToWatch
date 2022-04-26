@@ -15,7 +15,6 @@ extension URLSession {
         case dataError
         case sessionError
         case serializationError
-        
     }
     
     
@@ -49,6 +48,8 @@ extension URLSession {
         }
         task.resume()
     }
+    
+
 }
     
 

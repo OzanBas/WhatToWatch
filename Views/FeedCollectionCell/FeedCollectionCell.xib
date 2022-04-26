@@ -4,73 +4,67 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="FeedCollectionCell" translatesAutoresizingMaskIntoConstraints="NO" id="gTV-IL-0wX" customClass="FeedCollectionCell" customModule="WhatToWatch" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="437" height="577"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FeedCollectionCell" translatesAutoresizingMaskIntoConstraints="NO" id="jTf-PW-4de" customClass="FeedCollectionCell" customModule="WhatToWatch_" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="462" height="437"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="437" height="577"/>
+                <rect key="frame" x="0.0" y="0.0" width="462" height="437"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gd-gG-7HA">
-                        <rect key="frame" x="0.0" y="0.0" width="437" height="577"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFz-9W-ryg">
+                        <rect key="frame" x="0.0" y="0.0" width="462" height="437"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymc-vH-lAZ">
-                                <rect key="frame" x="0.0" y="547" width="437" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="yQu-nA-6As">
+                                <rect key="frame" x="0.0" y="407" width="462" height="30"/>
                                 <color key="backgroundColor" name="German Black"/>
-                                <color key="tintColor" name="German Beige"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ich-kI-e7M"/>
+                                    <constraint firstAttribute="height" constant="30" id="gny-eD-TP7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" name="TextLight beauty"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fje-9h-L2A">
-                                <rect key="frame" x="0.0" y="0.0" width="437" height="547"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rdk-Ue-QZG">
+                                <rect key="frame" x="0.0" y="0.0" width="462" height="407"/>
                                 <color key="backgroundColor" name="German Black"/>
-                                <color key="tintColor" name="German Beige"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="German Black"/>
-                        <color key="tintColor" name="German Beige"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ymc-vH-lAZ" secondAttribute="bottom" id="0gE-WN-bsk"/>
-                            <constraint firstItem="ymc-vH-lAZ" firstAttribute="top" secondItem="Fje-9h-L2A" secondAttribute="bottom" id="2fr-zl-SzE"/>
-                            <constraint firstItem="ymc-vH-lAZ" firstAttribute="leading" secondItem="8Gd-gG-7HA" secondAttribute="leading" id="ANj-a6-ArA"/>
-                            <constraint firstAttribute="trailing" secondItem="Fje-9h-L2A" secondAttribute="trailing" id="Crj-nX-Iui"/>
-                            <constraint firstItem="Fje-9h-L2A" firstAttribute="top" secondItem="8Gd-gG-7HA" secondAttribute="top" id="ELQ-Hj-pKO"/>
-                            <constraint firstAttribute="trailing" secondItem="ymc-vH-lAZ" secondAttribute="trailing" id="OEi-Cg-tg2"/>
-                            <constraint firstItem="Fje-9h-L2A" firstAttribute="leading" secondItem="8Gd-gG-7HA" secondAttribute="leading" id="iry-oL-fFh"/>
+                            <constraint firstAttribute="trailing" secondItem="yQu-nA-6As" secondAttribute="trailing" id="8ee-yc-OSy"/>
+                            <constraint firstAttribute="trailing" secondItem="rdk-Ue-QZG" secondAttribute="trailing" id="Mxw-Sm-1Ou"/>
+                            <constraint firstItem="rdk-Ue-QZG" firstAttribute="leading" secondItem="uFz-9W-ryg" secondAttribute="leading" id="OKc-Gm-kVb"/>
+                            <constraint firstItem="rdk-Ue-QZG" firstAttribute="top" secondItem="uFz-9W-ryg" secondAttribute="top" id="P8g-ti-MBU"/>
+                            <constraint firstAttribute="bottom" secondItem="yQu-nA-6As" secondAttribute="bottom" id="n4h-tz-Gay"/>
+                            <constraint firstItem="yQu-nA-6As" firstAttribute="leading" secondItem="uFz-9W-ryg" secondAttribute="leading" id="oBg-gm-fsv"/>
+                            <constraint firstItem="yQu-nA-6As" firstAttribute="top" secondItem="rdk-Ue-QZG" secondAttribute="bottom" id="wHT-yA-LvM"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" name="German Black"/>
-            <color key="tintColor" name="German Beige"/>
+            <viewLayoutGuide key="safeArea" id="g93-9G-W1U"/>
             <constraints>
-                <constraint firstItem="8Gd-gG-7HA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UlQ-DH-Z0n"/>
-                <constraint firstAttribute="bottom" secondItem="8Gd-gG-7HA" secondAttribute="bottom" id="qoW-yM-BYn"/>
-                <constraint firstAttribute="trailing" secondItem="8Gd-gG-7HA" secondAttribute="trailing" id="vcA-tn-flH"/>
-                <constraint firstItem="8Gd-gG-7HA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ync-36-oHc"/>
+                <constraint firstItem="uFz-9W-ryg" firstAttribute="top" secondItem="jTf-PW-4de" secondAttribute="top" id="Cmv-PK-7JC"/>
+                <constraint firstItem="uFz-9W-ryg" firstAttribute="leading" secondItem="jTf-PW-4de" secondAttribute="leading" id="H6i-0K-LBZ"/>
+                <constraint firstAttribute="bottom" secondItem="uFz-9W-ryg" secondAttribute="bottom" id="ZYH-Ua-4DV"/>
+                <constraint firstAttribute="trailing" secondItem="uFz-9W-ryg" secondAttribute="trailing" id="wZZ-Fs-j2z"/>
             </constraints>
-            <size key="customSize" width="437" height="577"/>
+            <size key="customSize" width="462" height="437"/>
             <connections>
-                <outlet property="feedCellImage" destination="Fje-9h-L2A" id="fys-Ss-hNM"/>
-                <outlet property="feedCellLabel" destination="ymc-vH-lAZ" id="AVy-9f-pXM"/>
+                <outlet property="feedCellImage" destination="rdk-Ue-QZG" id="k5O-Ts-DZx"/>
+                <outlet property="feedCellLabel" destination="yQu-nA-6As" id="2Gv-Bc-MNi"/>
             </connections>
-            <point key="canvasLocation" x="106.5217391304348" y="136.27232142857142"/>
+            <point key="canvasLocation" x="124.6376811594203" y="114.17410714285714"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <namedColor name="German Beige">
-            <color red="0.90196078431372551" green="0.83529411764705885" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="German Black">
-            <color red="0.10588235294117647" green="0.10196078431372549" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.10599999874830246" green="0.10199999809265137" blue="0.090000003576278687" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextLight beauty">
             <color red="0.98400002717971802" green="0.97299998998641968" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

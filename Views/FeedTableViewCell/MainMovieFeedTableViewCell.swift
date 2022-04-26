@@ -37,6 +37,8 @@ class MainMovieFeedTableViewCell: UITableViewCell {
         configureCellTitle()
     }
 
+    
+    
     //MARK: - HELPERS
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -48,7 +50,6 @@ class MainMovieFeedTableViewCell: UITableViewCell {
     }
     
     func configureCollectionViewCell(cell: FeedCollectionCell) {
- //       let size = cell.feedCellImage.frame.height
         cell.feedCellImage.layer.cornerRadius = 10
         
     }
@@ -58,6 +59,7 @@ class MainMovieFeedTableViewCell: UITableViewCell {
     }
     
 }
+
 
 //MARK: - TABLEVIEW EXTENSION
 extension MainMovieFeedTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -81,7 +83,7 @@ extension MainMovieFeedTableViewCell: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = self.frame.height
         let width = self.frame.width
-        return CGSize(width: width * 0.46 , height: height * 0.78)
+        return CGSize(width: width * 0.40 , height: height * 0.85)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

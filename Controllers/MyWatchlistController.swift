@@ -17,7 +17,7 @@ class MyWatchlistController: UIViewController {
     
     @IBOutlet weak var emptyView: UIView!
     let DM = DataManagement()
-    
+    let service = DataService()
     var movieList : [Movies] = [] {
         didSet {
             if self.movieList.count > 0 {
@@ -58,41 +58,8 @@ class MyWatchlistController: UIViewController {
         watchlistTableView.dataSource = self
         watchlistTableView.rowHeight = 200
     }
-    
-    func searchMovie(url:  URL?) {
-        URLSession.shared.request(url: url, expecting: MovieModel.self) { result in
-            switch result {
-            case .success(let model):
-                DispatchQueue.main.async {
-                    self.similarMovies = model.results
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-
-    func similarApiCall(atRow: Int, showVC: SearchDetailViewController, completion: @escaping () -> Void ) {
-        if let id = movieList[atRow].id {
-            let url = Endpoints().urlSimilar(toMovie: String(id))
-            URLSession.shared.request(url: url, expecting: MovieModel.self) { result in
-                switch result {
-                case .success(let model):
-                    DispatchQueue.main.async {
-                        self.similarMovies = model.results
-                        print(self.similarMovies.count)
-                    }
-                    
-                case .failure(let error):
-                    print(error)
-                }
-                completion()
-            }
-        }
-    }
-
 }
+
 //MARK: - TABLEVIEW EXTENSION
 
 extension MyWatchlistController: UITableViewDataSource, UITableViewDelegate {
@@ -156,12 +123,12 @@ extension MyWatchlistController: FeatureButtonsProtocol {
         
         let storyboard = UIStoryboard(name: "Discover", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "SearchDetailVC") as! SearchDetailViewController
-        similarApiCall(atRow: atRow, showVC: nextViewController) {
+        service.fetchSimilarsWL(watchlistVC: self, atRow: atRow, showVC: nextViewController) {
             DispatchQueue.main.async {
                 nextViewController.similarMovies = self.similarMovies
                 nextViewController.buildType = .buildForSimilar
                 self.navigationController?.pushViewController(nextViewController, animated: true)
-
+                
             }
         }
     }

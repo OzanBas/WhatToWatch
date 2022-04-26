@@ -33,6 +33,8 @@ class SearchViewCell: UITableViewCell {
         buttonConfiguration(button: detailsButton)
         buttonConfiguration(button: similarMoviesButton)
         
+
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -76,3 +78,5 @@ class SearchViewCell: UITableViewCell {
     }
     
 }
+
+

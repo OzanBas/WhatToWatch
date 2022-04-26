@@ -21,6 +21,7 @@ class DiscoverViewController: UIViewController {
     var watchlistDelegate : WatchlistProtocol?
     var watchlistVC = MyWatchlistController()
     var DM = DataManagement()
+    let service = DataService()
     var movie : [Movies] = [] {
         didSet {
             if movie.count == 0 {
@@ -68,42 +69,6 @@ class DiscoverViewController: UIViewController {
         discoverTableView.dataSource = self
         discoverTableView.delegate = self
         discoverTableView.rowHeight = 200
-    }
-    
-    
-//MARK: - API CALLS
-    func searchMovie(url:  URL?) {
-        URLSession.shared.request(url: url, expecting: MovieModel.self) { result in
-            switch result {
-            case .success(let model):
-                DispatchQueue.main.async {
-                    self.movie = model.results
-                    self.discoverTableView.reloadData()
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func similarApiCall(atRow: Int, showVC: SearchDetailViewController, completion: @escaping () -> Void ) {
-        if let id = movie[atRow].id {
-            let url = Endpoints().urlSimilar(toMovie: String(id))
-            URLSession.shared.request(url: url, expecting: MovieModel.self) { result in
-                switch result {
-                case .success(let model):
-                    DispatchQueue.main.async {
-                        self.similarMovies = model.results
-                        print(self.similarMovies.count)
-                    }
-                    
-                case .failure(let error):
-                    print(error)
-                }
-                completion()
-            }
-        }
     }
     
 }
@@ -158,7 +123,7 @@ extension DiscoverViewController: UITextFieldDelegate {
         if let text = searchTextField.text {
             let correctedText = text.replacingOccurrences(of: " ", with: "+")
             let url = Endpoints().movieSearch(query: correctedText)
-            searchMovie(url: url)
+            service.fetchSingleMovie(url: url, discoverVC: self)
         }
     }
 
@@ -199,7 +164,7 @@ extension DiscoverViewController: FeatureButtonsProtocol {
         
         let storyboard = UIStoryboard(name: "Discover", bundle: nil)
         let nextViewController = storyboard.instantiateViewController(withIdentifier: "SearchDetailVC") as! SearchDetailViewController
-        similarApiCall(atRow: atRow, showVC: nextViewController) {
+        service.fetchSimilars(discoverVC: self, atRow: atRow, showVC: nextViewController) {
             DispatchQueue.main.async {
                 nextViewController.similarMovies = self.similarMovies
                 nextViewController.buildType = .buildForSimilar
@@ -207,7 +172,6 @@ extension DiscoverViewController: FeatureButtonsProtocol {
 
             }
         }
-
     }
     
 }

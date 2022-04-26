@@ -14,32 +14,15 @@ class MainTabBarController: UIViewController , NavigationProtocol{
     
 //MARK: - PROPERTIES
 
+    let service = DataService()
     let apiParams = Endpoints()
     let titlesToBeFetched : [String] = ["Upcoming", "Popular", "TopRated"]
     
     @IBOutlet weak var mainMovieTableView: UITableView!
     
-    var upcomingMovies: [Movies] = [] {
-        didSet{
-            DispatchQueue.main.async {
-                self.mainMovieTableView.reloadData()
-            }
-        }
-    }
-    var popularMovies: [Movies] = [] {
-        didSet{
-            DispatchQueue.main.async {
-                self.mainMovieTableView.reloadData()
-            }
-        }
-    }
-    var topRatedMovies: [Movies] = [] {
-        didSet{
-            DispatchQueue.main.async {
-                self.mainMovieTableView.reloadData()
-            }
-        }
-    }
+    var upcomingMovies: [Movies] = []
+    var popularMovies: [Movies] = []
+    var topRatedMovies: [Movies] = []
 
     
 //MARK: - LIFECYCLE
@@ -50,10 +33,10 @@ class MainTabBarController: UIViewController , NavigationProtocol{
         mainMovieTableView.dataSource = self
         
         setupTableView()
-        
-        fetchUpcoming(url: apiParams.urlupcoming())
-        fetchPopular(url: apiParams.urlPopular())
-        fetchTopRated(url: apiParams.urltopRated())
+
+        service.fetchUpcoming(url: apiParams.urlupcoming(), tabBarVC: self)
+        service.fetchPopular(url: apiParams.urlPopular(), tabBarVC: self)
+        service.fetchTopRated(url: apiParams.urltopRated(), tabBarVC: self)
     }
     
 //MARK: - HELPER FUNCS
@@ -61,55 +44,11 @@ class MainTabBarController: UIViewController , NavigationProtocol{
     func setupTableView() {
         mainMovieTableView.register(UINib(nibName: "MainMovieFeedTableViewCell", bundle: nil), forCellReuseIdentifier: "MainMovieFeedTableViewCell")
         mainMovieTableView.translatesAutoresizingMaskIntoConstraints = false
-        mainMovieTableView.rowHeight = view.frame.height / 2.6 + 60
+        let heightBonus = view.frame.height / 10
+        mainMovieTableView.rowHeight = 220 + heightBonus
 
     }
     
-
-    
-    //data fetch
-    func fetchUpcoming(url:  URL?) {
-        URLSession.shared.request(url: url, expecting: MovieModel.self) { result in
-            switch result {
-            case .success(let model):
-                DispatchQueue.main.async {
-                    self.upcomingMovies = model.results
-                    self.mainMovieTableView.reloadData()
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    func fetchPopular(url:  URL?) {
-        URLSession.shared.request(url: url, expecting: MovieModel.self) { result in
-            switch result {
-            case .success(let model):
-                DispatchQueue.main.async {
-                    self.popularMovies = model.results
-                    self.mainMovieTableView.reloadData()
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    func fetchTopRated(url:  URL?) {
-        URLSession.shared.request(url: url, expecting: MovieModel.self) { result in
-            switch result {
-            case .success(let model):
-                DispatchQueue.main.async {
-                    self.topRatedMovies = model.results
-                    self.mainMovieTableView.reloadData()
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
     
     //MARK: - NavigationProtocol Function
     func moveToDetailVC(movie: Movies) {

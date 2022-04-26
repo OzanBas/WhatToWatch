@@ -13,9 +13,15 @@ class SearchDetailViewController: UIViewController {
     var movieData : Movies?
     
     var similarMovies : [Movies] = []
-    
+    var movieCast : [Cast] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     let DM = DataManagement()
-    
+    let service = DataService()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -43,6 +49,12 @@ class SearchDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if let movieData = movieData {
+            let id = String(movieData.id!)
+            service.fetchCreditsDetail(url: Endpoints().urlCredits(ofMovie: id), DetailVC: self)
+        }
+        
         DM.retrieveData()
         tableView.reloadData()
     }
@@ -80,6 +92,8 @@ class SearchDetailViewController: UIViewController {
         cell.detailCoverImageView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.48).isActive = true
         cell.detailCoverImageView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.35).isActive = true
         cell.detailCoverImageView.layer.cornerRadius = 5
+        
+        cell.castModel = movieCast
         
         cell.releaseDateLabel.attributedTextDisplay(headline: "Release: ", info: handleStringOptional(string: movieData?.release_date))
         cell.voteCountLabel.attributedTextDisplay(headline: "Votes: ", info: handleIntOptional(int: movieData?.vote_count))

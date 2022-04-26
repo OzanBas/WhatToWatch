@@ -10,9 +10,15 @@ import Foundation
 
 class Endpoints {
     
+    let apiKey = "d26e2033eed238ef5fdaf4d18a805b6e"
+
+    
     let baseUrl = "https://api.themoviedb.org/3"
     let queryBase = "https://api.themoviedb.org/3/search/movie"
-    let apiKey = "d26e2033eed238ef5fdaf4d18a805b6e"
+    let todoBase = "https://image.tmdb.org/t/p/original"
+    let creditsBase = "https://api.themoviedb.org/3/movie/"
+
+    
     
     let popular = "/movie/popular"
     let topRated = "/movie/top_rated"
@@ -50,6 +56,13 @@ class Endpoints {
         let url =  URL(string: string)
         return url
     }
+    
+    func urlCredits(ofMovie: String) -> URL? {
+        let string = creditsBase + ofMovie + "/credits?api_key=" + apiKey
+        let url =  URL(string: string)
+        return url
+    }
+    
 }
 
 
